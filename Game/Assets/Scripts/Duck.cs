@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Duck : MonoBehaviour
 {
+    public DragDrop dragDrop;
     Vector3 mouseOffset;
     bool wandering = true;
     float wanderTimer = 3f;
@@ -14,10 +15,12 @@ public class Duck : MonoBehaviour
     float velocityY = 0;
 
     public bool movingDuck = false;
+
+    public bool insideSac = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        dragDrop = dragDrop.GetComponent<DragDrop>();
     }
 
     // Update is called once per frame
@@ -32,6 +35,11 @@ public class Duck : MonoBehaviour
         Wander();
         GlobalVariables.Timer(ref wandering, ref wanderTimer);
         GlobalVariables.Timer(ref cooldown, ref cooldownTimer);
+
+        if (insideSac && !movingDuck) {
+            Destroy(this.gameObject);
+            GlobalVariables.population--;
+        }
     }
 
     public void CheckOffset() {
@@ -58,5 +66,19 @@ public class Duck : MonoBehaviour
         wanderTimer = Random.Range(zero, .5f);
         cooldown = true;
         cooldownTimer = Random.Range(3f, 5f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        Sacrifice sacrifice = other.GetComponent<Sacrifice>();
+        if (sacrifice) {
+            insideSac = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other) {
+        Sacrifice sacrifice = other.GetComponent<Sacrifice>();
+        if (sacrifice) {
+            insideSac = false;
+        }
     }
 }
