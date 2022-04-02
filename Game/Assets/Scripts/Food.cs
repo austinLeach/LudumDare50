@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Money : MonoBehaviour
+public class Food : MonoBehaviour
 {
     public DragDrop dragDrop;
     private List<Duck> duckList = new List<Duck>();
+
 
     private void Update()
     {
@@ -14,26 +15,26 @@ public class Money : MonoBehaviour
             while (duckList.Count != 0)
             {
                 Destroy(duckList[0].gameObject);
-                GlobalVariables.moneyPerSec++;
-                Debug.Log("Money Per Second: " + GlobalVariables.moneyPerSec);
+                GlobalVariables.foodPerSec++;
+                Debug.Log("Food Per Second: " + GlobalVariables.foodPerSec);
             }
         }
 
-        if(GlobalVariables.moneyPerSec > 0 && !IsInvoking("GenerateIncome"))
+        if (GlobalVariables.foodPerSec > 0 && !IsInvoking("GenerateFood"))
         {
-            InvokeRepeating("GenerateIncome", 1f, 1f);
+            InvokeRepeating("GenerateFood", 1f, 1f);
             Debug.Log("Start invoke");
         }
-        else if(GlobalVariables.moneyPerSec <= 0 && IsInvoking("GenerateIncome"))
+        else if (GlobalVariables.foodPerSec <= 0 && IsInvoking("GenerateFood"))
         {
-            CancelInvoke("GenerateIncome");
+            CancelInvoke("GenerateFood");
             Debug.Log("Cancel invoke");
         }
     }
 
-    private void GenerateIncome()
+    private void GenerateFood()
     {
-        GlobalVariables.money += GlobalVariables.moneyPerSec;
+        GlobalVariables.food += GlobalVariables.foodPerSec;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
