@@ -10,6 +10,7 @@ public class UI : MonoBehaviour
     public Image godSliderFill;
     public Text duckLimitLabel;
     public Text moneyLabel;
+    public GameObject Panel;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,8 @@ public class UI : MonoBehaviour
         foodSlider.value = GlobalVariables.initialSliderValue;
         godSlider.value = GlobalVariables.initialSliderValue;
         waterSlider.value = GlobalVariables.initialSliderValue;
+
+       
     }
 
     // Update is called once per frame
@@ -31,6 +34,7 @@ public class UI : MonoBehaviour
         UpdateDuckText();
         UpdateMoneyText();
         UpdateSliders();
+        SettingsActive();
     }
 
 
@@ -92,4 +96,15 @@ public class UI : MonoBehaviour
 
     }
 
+    public void SettingsActive()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            if(Panel.activeInHierarchy)
+                Panel.SetActive(false);
+            else
+                Panel.SetActive(true);
+        }
+        
+    }
 }
