@@ -30,6 +30,7 @@ public class UI : MonoBehaviour
         ChangeGodColor();
         UpdateDuckText();
         UpdateMoneyText();
+        UpdateSliders();
     }
 
 
@@ -40,6 +41,13 @@ public class UI : MonoBehaviour
             godSliderFill.color = Color.red;
         else if (godSlider.value >= .5 * GlobalVariables.sliderMax)
             godSliderFill.color = Color.green;
+    }
+
+    private void UpdateSliders()
+    {
+        godSlider.value = GlobalVariables.godHappiness;
+        foodSlider.value = GlobalVariables.food;
+        waterSlider.value = GlobalVariables.water;
     }
 
     public void UpdateDuckText()
