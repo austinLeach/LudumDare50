@@ -83,74 +83,84 @@ public class Upgrades : MonoBehaviour
         }
     }
     public bool Damage1() {
-        // if (GlobalVariables.money >= 100) {
-        //     GlobalVariables.money -= 100;
+        if (GlobalVariables.money >= 100) {
+            GlobalVariables.money -= 100;
             GlobalVariables.upgrades.Add("1");
             return true;
-        // }
+        }
+        return false;
     }
     public bool Damage2() {
-        // if (GlobalVariables.money >= 200) {
-        //     GlobalVariables.money -= 200;
+        if (GlobalVariables.money >= 200) {
+            GlobalVariables.money -= 200;
             GlobalVariables.upgrades.Add("2");
             return true;
-        // }
+        }
+        return false;
     }
     public bool Damage3() {
-        // if (GlobalVariables.money >= 300) {
-        //     GlobalVariables.money -= 300;
+        if (GlobalVariables.money >= 300) {
+            GlobalVariables.money -= 300;
             GlobalVariables.upgrades.Add("3");
             return true;
-        // }
+        }
+        return false;
     }
     public bool Damage4() {
-        // if (GlobalVariables.money >= 400) {
-        //     GlobalVariables.money -= 400;
+        if (GlobalVariables.money >= 400) {
+            GlobalVariables.money -= 400;
             GlobalVariables.upgrades.Add("4");
             return true;
-        // }
+        }
+        return false;
     }
     public bool Damage5() {
-        // if (GlobalVariables.money >= 500) {
-        //     GlobalVariables.money -= 500;
+        if (GlobalVariables.money >= 500) {
+            GlobalVariables.money -= 500;
             GlobalVariables.upgrades.Add("5");
             return true;
-        // }
+        }
+        return false;
     }
 
     public bool pickUpgrade1() {
-        // if (GlobalVariables.money >= 100) {
-        //     GlobalVariables.money -= 100;
+        if (GlobalVariables.money >= 100) {
+            GlobalVariables.money -= 100;
             dragDrop.numberCanPickUp = 2;
             return true;
-        // }
+        }
+        return false;
     }
     public bool pickUpgrade2() {
-        // if (GlobalVariables.money >= 100) {
-        //     GlobalVariables.money -= 100;
+        if (GlobalVariables.money >= 100) {
+            GlobalVariables.money -= 100;
             dragDrop.numberCanPickUp = 5;
-        // }
-        return true;
+            return true;
+        }
+        return false;
     }
     public bool pickUpgrade3() {
-        // if (GlobalVariables.money >= 100) {
-        //     GlobalVariables.money -= 100;
+        if (GlobalVariables.money >= 100) {
+            GlobalVariables.money -= 100;
             dragDrop.numberCanPickUp = 10;
-        // }
-        return true;
+            return true;
+        }
+        return false;
     }
     public bool pickUpgrade4() {
-        // if (GlobalVariables.money >= 100) {
-        //     GlobalVariables.money -= 100;
+        if (GlobalVariables.money >= 100) {
+            GlobalVariables.money -= 100;
             dragDrop.numberCanPickUp = 15;
-        // }
-        return true;
+            return true;
+        }
+        return false;
     }
     public bool pickUpgrade5() {
-        // if (GlobalVariables.money >= 100) {
-        //     GlobalVariables.money -= 100;
+        if (GlobalVariables.money >= 100) {
+            GlobalVariables.money -= 100;
             dragDrop.numberCanPickUp = 20;
-        // }
-        return true;
+            return true;
+        }
+        return false;
     }
 }
