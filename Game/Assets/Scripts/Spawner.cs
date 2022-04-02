@@ -33,14 +33,17 @@ public class Spawner : MonoBehaviour
         horizontalRanges[1] = horizontalCenter.x + horizontalBounds.extents.x;
         horizontalRanges[2] = horizontalCenter.y - horizontalBounds.extents.y;
         horizontalRanges[3] = horizontalCenter.y + horizontalBounds.extents.y;
+        for (int i = 0; i < 1000; i++) {
+            Spawn();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        Spawn();
-        counter++;
-        Debug.Log(counter);
+        // Spawn();
+        // counter++;
+        // Debug.Log(counter);
     }
 
     public void Spawn() {

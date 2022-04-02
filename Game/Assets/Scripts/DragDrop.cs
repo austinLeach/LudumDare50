@@ -7,7 +7,7 @@ public class DragDrop : MonoBehaviour
 
     public BoxCollider2D Hitbox;
     public BoxCollider2D BoxCollider;
-    bool MouseIsDown = false;
+    public bool MouseIsDown = false;
     bool MouseDrag = false;
 
     List<Duck> duckList = new List<Duck>();
@@ -30,13 +30,13 @@ public class DragDrop : MonoBehaviour
         transform.position = mouse;
         if (MouseIsDown && MouseDrag) {
             for (int i = 0; i < duckList.Count; i++) {
+                duckList[i].movingDuck = true;
                 duckList[i].MoveDuck();
             }
         }
     }
 
     private void OnTriggerStay2D(Collider2D other) {
-
         Duck duck = other.GetComponent<Duck>();
         if (duck && MouseIsDown && duckList.Count < 10) {
             duck.CheckOffset();
@@ -45,7 +45,7 @@ public class DragDrop : MonoBehaviour
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-         Duck duck = other.GetComponent<Duck>();
+        Duck duck = other.GetComponent<Duck>();
         if (duck && !MouseDrag) {
             duckList.Remove(duck);
         }
@@ -62,6 +62,9 @@ public class DragDrop : MonoBehaviour
     private void OnMouseUp() {
         MouseIsDown = false;
         MouseDrag = false;
+        for (int i = 0; i < duckList.Count; i++) {
+            duckList[i].movingDuck = false;
+        }
         duckList.Clear();
     }
 }
