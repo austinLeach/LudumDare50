@@ -14,6 +14,9 @@ public class Spawner : MonoBehaviour
     float[] verticalRanges = new float[4];
     float[] horizontalRanges = new float[4];
     int counter = 0;
+
+    bool isSpawning = false;
+    public float spawnRate = GlobalVariables.currentSpawnRate;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,21 +35,20 @@ public class Spawner : MonoBehaviour
         horizontalRanges[0] = horizontalCenter.x - horizontalBounds.extents.x;
         horizontalRanges[1] = horizontalCenter.x + horizontalBounds.extents.x;
         horizontalRanges[2] = horizontalCenter.y - horizontalBounds.extents.y;
-        horizontalRanges[3] = horizontalCenter.y + horizontalBounds.extents.y;
-        for (int i = 0; i < 100; i++) {
-            Spawn();
-        }
+        horizontalRanges[3] = horizontalCenter.y + horizontalBounds.extents.y;  
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Spawn();
-        // counter++;
-        // Debug.Log(counter);
+        Spawn();
+        GlobalVariables.Timer(ref isSpawning, ref spawnRate);
     }
 
     public void Spawn() {
+        if (isSpawning) {
+            return;
+        }
         int whichBox = Random.Range(0, 2);
         Debug.Log(whichBox);
         float randomX;
@@ -64,5 +66,7 @@ public class Spawner : MonoBehaviour
         Vector2 randomPos = new Vector2(randomX, randomY);
         Instantiate(Duck, randomPos, Quaternion.identity);
         GlobalVariables.population++;
+        isSpawning = true;
+        spawnRate = GlobalVariables.currentSpawnRate;
     }
 }

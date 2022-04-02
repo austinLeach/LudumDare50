@@ -17,6 +17,7 @@ public class Duck : MonoBehaviour
     public bool movingDuck = false;
 
     public bool insideSac = false;
+    public bool insideBoundary = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,8 +38,10 @@ public class Duck : MonoBehaviour
         GlobalVariables.Timer(ref cooldown, ref cooldownTimer);
 
         if (insideSac && !movingDuck) {
-            Destroy(this.gameObject);
-            GlobalVariables.population--;
+            DestroyDuck();
+        }
+        if (insideBoundary && !movingDuck) {
+            DestroyDuck();
         }
     }
 
@@ -69,16 +72,29 @@ public class Duck : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
+        Boundary boundary = other.GetComponent<Boundary>();
         Sacrifice sacrifice = other.GetComponent<Sacrifice>();
         if (sacrifice) {
             insideSac = true;
         }
+        if (boundary) {
+            insideBoundary = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
+        Boundary boundary = other.GetComponent<Boundary>();
         Sacrifice sacrifice = other.GetComponent<Sacrifice>();
         if (sacrifice) {
             insideSac = false;
         }
+         if (boundary) {
+            insideBoundary = false;
+        }
+    }
+
+    void DestroyDuck() {
+        Destroy(this.gameObject);
+        GlobalVariables.population--;
     }
 }

@@ -66,7 +66,7 @@ public class UI : MonoBehaviour
 
     public void TestMoneyIncrease()
     {
-        GlobalVariables.money += 10;
+        GlobalVariables.money += 1000000;
         //moneyLabel.text = "$" + GlobalVariables.money;
     }
 

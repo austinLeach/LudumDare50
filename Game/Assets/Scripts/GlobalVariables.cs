@@ -12,6 +12,7 @@ public static class GlobalVariables
     public static int godHappiness = 250;
     public static int initialSliderValue = 100;
     public static int moneyPerSec = 0;
+    public static float currentSpawnRate = 1f;
     public static List<string> upgrades = new List<string>();
     public static bool Timer(ref bool isChanging, ref float timer) {
       if (isChanging)

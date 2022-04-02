@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Boundary : MonoBehaviour
 {
-    public DragDrop dragDrop;
+    // public DragDrop dragDrop;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,13 +15,5 @@ public class Boundary : MonoBehaviour
     void Update()
     {
         
-    }
-
-    void OnTriggerStay2D (Collider2D other) {
-        Duck duck = other.GetComponent<Duck>();
-        if (duck && !dragDrop.MouseIsDown) {
-            Destroy(other.gameObject);
-            GlobalVariables.population--;
-        }
     }
 }
