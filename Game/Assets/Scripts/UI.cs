@@ -21,7 +21,7 @@ public class UI : MonoBehaviour
         godSlider.maxValue = GlobalVariables.sliderMax;
 
         foodSlider.value = GlobalVariables.initialSliderValue;
-        godSlider.value = GlobalVariables.initialSliderValue;
+        godSlider.value = GlobalVariables.initialSliderValue + 100;
         waterSlider.value = GlobalVariables.initialSliderValue;
 
        
