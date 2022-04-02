@@ -13,74 +13,75 @@ public class UI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        duckLimitLabel.text = "0 / 420";
-        moneyLabel.text = "$0";
+        duckLimitLabel.text = GlobalVariables.population + " / 1000";
+        moneyLabel.text = "$" + GlobalVariables.money;
+        foodSlider.maxValue = GlobalVariables.sliderMax;
+        waterSlider.maxValue = GlobalVariables.sliderMax;
+        godSlider.maxValue = GlobalVariables.sliderMax;
+
+        foodSlider.value = GlobalVariables.initialSliderValue;
+        godSlider.value = GlobalVariables.initialSliderValue;
+        waterSlider.value = GlobalVariables.initialSliderValue;
     }
 
     // Update is called once per frame
     void Update()
     {
         ChangeGodColor();
+        UpdateDuckText();
+        UpdateMoneyText();
     }
 
 
     private void ChangeGodColor()
     {
 
-        if (godSlider.value < .5)
+        if (godSlider.value < .5 * GlobalVariables.sliderMax)
             godSliderFill.color = Color.red;
-        else if (godSlider.value >= .5)
+        else if (godSlider.value >= .5 * GlobalVariables.sliderMax)
             godSliderFill.color = Color.green;
     }
 
-    public void UpdateSliders(string bar, int value)
+    public void UpdateDuckText()
     {
-
-        if (bar.ToLower().Equals("god"))
-        {
-            godSlider.value += value;
-            ChangeGodColor();
-        }
-
-        else if (bar.ToLower().Equals("water"))
-        {
-            waterSlider.value += value;
-        }
-        else
-        {
-            foodSlider.value += value;
-        }
-    }
-
-    public void UpdateDuckText(int value)
-    {
-        duckLimitLabel.text = (value + int.Parse(moneyLabel.ToString().Substring(1))).ToString() + " / 100";
+        duckLimitLabel.text = GlobalVariables.population + " / 1000";
     } 
 
-    public void UpdateMoneyText(int value)
+    public void UpdateMoneyText()
     {
-        moneyLabel.text = "$" + (value + int.Parse(moneyLabel.ToString().Substring(1))).ToString();
+        moneyLabel.text = "$" + GlobalVariables.money;
     }
 
     public void TestMoneyIncrease()
     {
-        moneyLabel.text = "$" + (int.Parse(moneyLabel.ToString().Substring(1)) + 10).ToString();
+        GlobalVariables.money += 10;
+        //moneyLabel.text = "$" + GlobalVariables.money;
     }
 
     public void TestMoneydecrease()
     {
-        moneyLabel.text = "$" + (int.Parse(moneyLabel.ToString().Substring(1)) + 10).ToString();
+        GlobalVariables.money -= 10;
+        //moneyLabel.text = "$" + GlobalVariables.money;
     }
 
     public void TestDuckTextIncrease()
     {
-        duckLimitLabel.text = (1 + int.Parse(moneyLabel.ToString().Substring(1))).ToString() + " / 100";
+        GlobalVariables.population += 10;
+        //duckLimitLabel.text = (int.Parse(duckLimitLabel.text.Substring(0, 2)) + 10).ToString() + " / 420";
 
     }
 
     public void TestDuckTextDecrease()
     {
-        duckLimitLabel.text = (-1 + int.Parse(moneyLabel.ToString().Substring(1))).ToString() + " / 100";
+        GlobalVariables.population -= 10;
+        //duckLimitLabel.text = (int.Parse(duckLimitLabel.text.Substring(0,2)) + 10).ToString() + " / 420";
+    }
+    /*
+     * no functionality here
+     */
+    public void UpgradeBuilding()
+    {
+
     }
 
 }

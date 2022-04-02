@@ -4,6 +4,13 @@ using UnityEngine;
 
 public static class GlobalVariables
 {
+    public static int sliderMax = 250;
+    public static int money = 20;
+    public static int food = 100;
+    public static int water = 100;
+    public static int population = 1;
+    public static int godHappiness = 250;
+    public static int initialSliderValue = 150;
     public static bool Timer(ref bool isChanging, ref float timer) {
       if (isChanging)
       {
@@ -15,4 +22,6 @@ public static class GlobalVariables
       }
       return isChanging;
     }
+
+    
 }
