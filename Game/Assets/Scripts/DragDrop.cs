@@ -10,6 +10,7 @@ public class DragDrop : MonoBehaviour
     public bool MouseIsDown = false;
     bool MouseDrag = false;
 
+    public int numberCanPickUp = 1;
     List<Duck> duckList = new List<Duck>();
 
     // Start is called before the first frame update
@@ -38,7 +39,7 @@ public class DragDrop : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other) {
         Duck duck = other.GetComponent<Duck>();
-        if (duck && MouseIsDown && duckList.Count < 10) {
+        if (duck && MouseIsDown && duckList.Count < numberCanPickUp) {
             duck.CheckOffset();
             duckList.Add(duck);
         }
