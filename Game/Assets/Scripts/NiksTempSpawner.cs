@@ -41,10 +41,11 @@ public class NiksTempSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        while(counter < 20)
+        while(counter < 100)
         {
             Spawn();
             counter++;
+            GlobalVariables.population++;
             Debug.Log(counter);
         }
     }

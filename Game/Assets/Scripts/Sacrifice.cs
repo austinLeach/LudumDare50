@@ -5,6 +5,11 @@ using UnityEngine;
 public class Sacrifice : MonoBehaviour
 {
     public DragDrop dragDrop;
+    private bool flag = true;
+    private void Update()
+    {
+        
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         Duck duck = collision.GetComponent<Duck>();
@@ -13,6 +18,7 @@ public class Sacrifice : MonoBehaviour
             Destroy(collision.gameObject);
             Debug.Log("Stay");
             GlobalVariables.godHappiness++;
+            GlobalVariables.population--;
             Debug.Log("God Happiness: " + GlobalVariables.godHappiness);
         }
     }
