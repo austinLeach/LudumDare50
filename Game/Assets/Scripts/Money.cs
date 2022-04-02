@@ -6,9 +6,18 @@ public class Money : MonoBehaviour
 {
     public DragDrop dragDrop;
 
-    private void Start()
+    private void Update()
     {
-        InvokeRepeating("GenerateIncome", 1f, 1f);
+        if(GlobalVariables.moneyPerSec > 0 && !IsInvoking("GenerateIncome"))
+        {
+            InvokeRepeating("GenerateIncome", 1f, 1f);
+            Debug.Log("Start invoke");
+        }
+        else if(GlobalVariables.moneyPerSec <= 0 && IsInvoking("GenerateIncome"))
+        {
+            CancelInvoke("GenerateIncome");
+            Debug.Log("Cancel invoke");
+        }
     }
 
     private void GenerateIncome()
@@ -16,15 +25,20 @@ public class Money : MonoBehaviour
         GlobalVariables.money += GlobalVariables.moneyPerSec;
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Duck duck = collision.GetComponent<Duck>();
-        if (duck && !dragDrop.MouseIsDown)
+        if (duck)
         {
-            Destroy(collision.gameObject);
-            Debug.Log("Stay");
             GlobalVariables.moneyPerSec++;
-            Debug.Log("Money Per Second: " + GlobalVariables.moneyPerSec);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Duck duck = collision.GetComponent<Duck>();
+        if (duck)
+        {
+            GlobalVariables.moneyPerSec--;
         }
     }
 }

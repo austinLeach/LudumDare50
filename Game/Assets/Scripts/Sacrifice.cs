@@ -5,21 +5,37 @@ using UnityEngine;
 public class Sacrifice : MonoBehaviour
 {
     public DragDrop dragDrop;
-    private bool flag = true;
+    private List<Duck> duckList = new List<Duck>();
+
     private void Update()
     {
-        
+        if(duckList.Count != 0 && !dragDrop.MouseIsDown)
+        {
+            while(duckList.Count != 0)
+            {
+                Destroy(duckList[0].gameObject);
+                GlobalVariables.population--;
+                GlobalVariables.godHappiness += 2;
+            }
+        }
+        GlobalVariables.godHappiness -= Time.deltaTime * (Time.time/20);
     }
-    // private void OnTriggerStay2D(Collider2D collision)
-    // {
-    //     Duck duck = collision.GetComponent<Duck>();
-    //     if (duck && !dragDrop.MouseIsDown)
-    //     {
-    //         Destroy(collision.gameObject);
-    //         Debug.Log("Stay");
-    //         GlobalVariables.godHappiness++;
-    //         GlobalVariables.population--;
-    //         Debug.Log("God Happiness: " + GlobalVariables.godHappiness);
-    //     }
-    // }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Duck duck = collision.GetComponent<Duck>();
+        if(duck)
+        {
+            duckList.Add(duck);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Duck duck = collision.GetComponent<Duck>();
+        if(duck)
+        {
+            duckList.Remove(duck);
+        }
+    }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Duck : MonoBehaviour
 {
-    public DragDrop dragDrop;
     Vector3 mouseOffset;
     bool wandering = true;
     float wanderTimer = 3f;
@@ -21,7 +20,7 @@ public class Duck : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dragDrop = dragDrop.GetComponent<DragDrop>();
+        
     }
 
     // Update is called once per frame
