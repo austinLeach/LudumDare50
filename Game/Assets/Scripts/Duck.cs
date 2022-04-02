@@ -9,6 +9,7 @@ public class Duck : MonoBehaviour
     float wanderTimer = 3f;
 
     bool cooldown = false;
+    bool needsDestroyed = false;
     float cooldownTimer;
     float velocityX = 0;
     float velocityY = 0;
@@ -32,6 +33,10 @@ public class Duck : MonoBehaviour
         Wander();
         GlobalVariables.Timer(ref wandering, ref wanderTimer);
         GlobalVariables.Timer(ref cooldown, ref cooldownTimer);
+        if(Input.GetMouseButtonUp(0) && needsDestroyed)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     public void CheckOffset() {
@@ -58,5 +63,15 @@ public class Duck : MonoBehaviour
         wanderTimer = Random.Range(zero, .5f);
         cooldown = true;
         cooldownTimer = Random.Range(3f, 5f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        needsDestroyed = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        needsDestroyed = false;
     }
 }
