@@ -10,7 +10,8 @@ public static class GlobalVariables
     public static int water = 100;
     public static int population = 1;
     public static int godHappiness = 250;
-    public static int initialSliderValue = 150;
+    public static int initialSliderValue = 100;
+    public static int moneyPerSec = 0;
     public static List<string> upgrades = new List<string>();
     public static bool Timer(ref bool isChanging, ref float timer) {
       if (isChanging)
