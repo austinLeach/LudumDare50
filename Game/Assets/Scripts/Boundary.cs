@@ -21,6 +21,7 @@ public class Boundary : MonoBehaviour
         Duck duck = other.GetComponent<Duck>();
         if (duck && !dragDrop.MouseIsDown) {
             Destroy(other.gameObject);
+            GlobalVariables.population--;
         }
     }
 }
