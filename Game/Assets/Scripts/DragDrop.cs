@@ -8,7 +8,7 @@ public class DragDrop : MonoBehaviour
     public BoxCollider2D Hitbox;
     public BoxCollider2D BoxCollider;
     public bool MouseIsDown = false;
-    bool MouseDrag = false;
+    public bool MouseDrag = false;
 
     public int numberCanPickUp = 1;
     List<Duck> duckList = new List<Duck>();
@@ -61,6 +61,7 @@ public class DragDrop : MonoBehaviour
     }
 
     private void OnMouseUp() {
+        Debug.Log("ONMOUSEUP");
         MouseIsDown = false;
         MouseDrag = false;
         for (int i = 0; i < duckList.Count; i++) {

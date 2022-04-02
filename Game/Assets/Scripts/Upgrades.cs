@@ -21,31 +21,31 @@ public class Upgrades : MonoBehaviour
         if (hasDamage == 0) {
             if(Damage1()) {
                 hasDamage = 1;
-                DamageButton.GetComponent<Text>().text = "Upgrade Damage 2";
+                DamageButton.GetComponent<Text>().text = "Egg-Quacker";
             }
         }
         else if (hasDamage == 1) {
             if(Damage2()) {
                 hasDamage = 2;
-                DamageButton.GetComponent<Text>().text = "Upgrade Damage 3";
+                DamageButton.GetComponent<Text>().text = "Quack-19";
             }
         }
         else if (hasDamage == 2) {
             if(Damage3()) {
                 hasDamage = 3;
-                DamageButton.GetComponent<Text>().text = "Upgrade Damage 4";
+                DamageButton.GetComponent<Text>().text = "Quack-tillery";
             }
         }
         else if (hasDamage == 3) {
             if(Damage4()) {
                 hasDamage = 4;
-                DamageButton.GetComponent<Text>().text = "Upgrade Damage 5";
+                DamageButton.GetComponent<Text>().text = "M.O.A.Q";
             }
         }
         else if (hasDamage == 4) {
             if(Damage5()) {
                 hasDamage = 5;
-                DamageButton.GetComponent<Text>().text = "Maxed Out Damage";
+                DamageButton.GetComponent<Text>().text = "Quacked Out Damage";
             }
         }
     }
@@ -54,31 +54,31 @@ public class Upgrades : MonoBehaviour
         if (hasUpgrade == 0) {
             if(pickUpgrade1()) {
                 hasUpgrade = 1;
-                UpgradeButton.GetComponent<Text>().text = "Upgrade Pointer 2";
+                UpgradeButton.GetComponent<Text>().text = "Lasso";
             }
         }
         else if (hasUpgrade == 1) {
             if(pickUpgrade2()) {
                 hasUpgrade = 2;
-                UpgradeButton.GetComponent<Text>().text = "Upgrade Pointer 3";
+                UpgradeButton.GetComponent<Text>().text = "The Claw";
             }
         }
         else if (hasUpgrade == 2) {
             if(pickUpgrade3()) {
                 hasUpgrade = 3;
-                UpgradeButton.GetComponent<Text>().text = "Upgrade Pointer 4";
+                UpgradeButton.GetComponent<Text>().text = "Bigger Picker Upper";
             }
         }
         else if (hasUpgrade == 3) {
             if(pickUpgrade4()) {
                 hasUpgrade = 4;
-                UpgradeButton.GetComponent<Text>().text = "Upgrade Pointer 5";
+                UpgradeButton.GetComponent<Text>().text = "Quacuum";
             }
         }
         else if (hasUpgrade == 4) {
             if(pickUpgrade5()) {
                 hasUpgrade = 5;
-                UpgradeButton.GetComponent<Text>().text = "Maxed Out Pointer";
+                UpgradeButton.GetComponent<Text>().text = "Maxed Out Grabber";
             }
         }
     }
