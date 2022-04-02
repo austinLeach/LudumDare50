@@ -2,14 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sacrifice : MonoBehaviour
+public class Money : MonoBehaviour
 {
     public DragDrop dragDrop;
-    private bool flag = true;
-    private void Update()
+
+    private void Start()
     {
-        
+        InvokeRepeating("GenerateIncome", 1f, 1f);
     }
+
+    private void GenerateIncome()
+    {
+        GlobalVariables.money += GlobalVariables.moneyPerSec;
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         Duck duck = collision.GetComponent<Duck>();
@@ -17,9 +23,8 @@ public class Sacrifice : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Debug.Log("Stay");
-            GlobalVariables.godHappiness++;
-            GlobalVariables.population--;
-            Debug.Log("God Happiness: " + GlobalVariables.godHappiness);
+            GlobalVariables.moneyPerSec++;
+            Debug.Log("Money Per Second: " + GlobalVariables.moneyPerSec);
         }
     }
 }
