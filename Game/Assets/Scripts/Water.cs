@@ -18,11 +18,16 @@ public class Water : MonoBehaviour
             CancelInvoke("GenerateWater");
             Debug.Log("Cancel invoke");
         }
+        GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.06f);
     }
 
     private void GenerateWater()
     {
         GlobalVariables.water += GlobalVariables.waterPerSec;
+        if(GlobalVariables.water > GlobalVariables.sliderMax)
+        {
+            GlobalVariables.water = GlobalVariables.sliderMax;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

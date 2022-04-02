@@ -18,11 +18,16 @@ public class Food : MonoBehaviour
             CancelInvoke("GenerateFood");
             Debug.Log("Cancel invoke");
         }
+        GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.03f);
     }
 
     private void GenerateFood()
     {
         GlobalVariables.food += GlobalVariables.foodPerSec;
+        if (GlobalVariables.food > GlobalVariables.sliderMax)
+        {
+            GlobalVariables.food = GlobalVariables.sliderMax;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
