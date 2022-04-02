@@ -5,21 +5,9 @@ using UnityEngine;
 public class Food : MonoBehaviour
 {
     public DragDrop dragDrop;
-    private List<Duck> duckList = new List<Duck>();
-
 
     private void Update()
     {
-        if (duckList.Count != 0 && !dragDrop.MouseIsDown)
-        {
-            while (duckList.Count != 0)
-            {
-                Destroy(duckList[0].gameObject);
-                GlobalVariables.foodPerSec++;
-                Debug.Log("Food Per Second: " + GlobalVariables.foodPerSec);
-            }
-        }
-
         if (GlobalVariables.foodPerSec > 0 && !IsInvoking("GenerateFood"))
         {
             InvokeRepeating("GenerateFood", 1f, 1f);
@@ -42,7 +30,7 @@ public class Food : MonoBehaviour
         Duck duck = collision.GetComponent<Duck>();
         if (duck)
         {
-            duckList.Add(duck);
+            GlobalVariables.foodPerSec++;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -50,7 +38,7 @@ public class Food : MonoBehaviour
         Duck duck = collision.GetComponent<Duck>();
         if (duck)
         {
-            duckList.Remove(duck);
+            GlobalVariables.foodPerSec--;
         }
     }
 }

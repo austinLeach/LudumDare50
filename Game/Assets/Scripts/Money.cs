@@ -5,20 +5,9 @@ using UnityEngine;
 public class Money : MonoBehaviour
 {
     public DragDrop dragDrop;
-    private List<Duck> duckList = new List<Duck>();
 
     private void Update()
     {
-        if (duckList.Count != 0 && !dragDrop.MouseIsDown)
-        {
-            while (duckList.Count != 0)
-            {
-                Destroy(duckList[0].gameObject);
-                GlobalVariables.moneyPerSec++;
-                Debug.Log("Money Per Second: " + GlobalVariables.moneyPerSec);
-            }
-        }
-
         if(GlobalVariables.moneyPerSec > 0 && !IsInvoking("GenerateIncome"))
         {
             InvokeRepeating("GenerateIncome", 1f, 1f);
@@ -41,7 +30,7 @@ public class Money : MonoBehaviour
         Duck duck = collision.GetComponent<Duck>();
         if (duck)
         {
-            duckList.Add(duck);
+            GlobalVariables.moneyPerSec++;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -49,7 +38,7 @@ public class Money : MonoBehaviour
         Duck duck = collision.GetComponent<Duck>();
         if (duck)
         {
-            duckList.Remove(duck);
+            GlobalVariables.moneyPerSec--;
         }
     }
 }

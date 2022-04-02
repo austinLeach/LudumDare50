@@ -5,21 +5,9 @@ using UnityEngine;
 public class Water : MonoBehaviour
 {
     public DragDrop dragDrop;
-    private List<Duck> duckList = new List<Duck>();
-
 
     private void Update()
     {
-        if (duckList.Count != 0 && !dragDrop.MouseIsDown)
-        {
-            while (duckList.Count != 0)
-            {
-                Destroy(duckList[0].gameObject);
-                GlobalVariables.waterPerSec++;
-                Debug.Log("Water Per Second: " + GlobalVariables.waterPerSec);
-            }
-        }
-
         if (GlobalVariables.waterPerSec > 0 && !IsInvoking("GenerateWater"))
         {
             InvokeRepeating("GenerateWater", 1f, 1f);
@@ -42,7 +30,7 @@ public class Water : MonoBehaviour
         Duck duck = collision.GetComponent<Duck>();
         if (duck)
         {
-            duckList.Add(duck);
+            GlobalVariables.waterPerSec++;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -50,7 +38,7 @@ public class Water : MonoBehaviour
         Duck duck = collision.GetComponent<Duck>();
         if (duck)
         {
-            duckList.Remove(duck);
+            GlobalVariables.waterPerSec--;
         }
     }
 }
