@@ -6,10 +6,10 @@ public static class GlobalVariables
 {
     public static int sliderMax = 250;
     public static int money = 20;
-    public static int food = 100;
-    public static int water = 100;
+    public static float food = 100f;
+    public static float water = 100f;
     public static int population = 0;
-    public static int godHappiness = 250;
+    public static float godHappiness = 250f;
     public static int initialSliderValue = 100;
     public static int moneyPerSec = 0;
     public static int waterPerSec = 0;

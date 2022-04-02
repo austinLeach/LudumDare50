@@ -6,6 +6,7 @@ public class Sacrifice : MonoBehaviour
 {
     public DragDrop dragDrop;
     private List<Duck> duckList = new List<Duck>();
+
     private void Update()
     {
         if(duckList.Count != 0 && !dragDrop.MouseIsDown)
@@ -14,8 +15,10 @@ public class Sacrifice : MonoBehaviour
             {
                 Destroy(duckList[0].gameObject);
                 GlobalVariables.population--;
+                GlobalVariables.godHappiness += 2;
             }
         }
+        GlobalVariables.godHappiness -= Time.deltaTime * (Time.time/20);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
