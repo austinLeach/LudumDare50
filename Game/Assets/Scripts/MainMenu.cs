@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
     }
     public void PlayGame() {
         // GlobalVariables.timeInAudio = audio.time;
-        SceneManager.LoadScene("Austin");
+        SceneManager.LoadScene("Inbetween1");
     }
     public void QuitGame() {
         Application.Quit();

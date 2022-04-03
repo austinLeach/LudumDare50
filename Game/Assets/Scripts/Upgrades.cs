@@ -21,28 +21,28 @@ public class Upgrades : MonoBehaviour
         if (hasDamage == 0) {
             if(Damage1()) {
                 hasDamage = 1;
-                DamageButton.GetComponent<Text>().text = "Egg-Quacker";
+                DamageButton.GetComponent<Text>().text = "$500: Egg-Quacker";
                 GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .8f;
             }
         }
         else if (hasDamage == 1) {
             if(Damage2()) {
                 hasDamage = 2;
-                DamageButton.GetComponent<Text>().text = "Quack-19";
+                DamageButton.GetComponent<Text>().text = "$1000: Quack-19";
                 GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .7f;
             }
         }
         else if (hasDamage == 2) {
             if(Damage3()) {
                 hasDamage = 3;
-                DamageButton.GetComponent<Text>().text = "Quack-tillery";
+                DamageButton.GetComponent<Text>().text = "$10000: Quack-tillery";
                 GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .6f;
             }
         }
         else if (hasDamage == 3) {
             if(Damage4()) {
                 hasDamage = 4;
-                DamageButton.GetComponent<Text>().text = "M.O.A.Q";
+                DamageButton.GetComponent<Text>().text = "$50000: M.O.A.Q";
                 GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .5f;
             }
         }
@@ -66,28 +66,28 @@ public class Upgrades : MonoBehaviour
         if (hasUpgrade == 0) {
             if(pickUpgrade1()) {
                 hasUpgrade = 1;
-                UpgradeButton.GetComponent<Text>().text = "Lasso";
+                UpgradeButton.GetComponent<Text>().text = "$500: Lasso";
                 GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .8f;
             }
         }
         else if (hasUpgrade == 1) {
             if(pickUpgrade2()) {
                 hasUpgrade = 2;
-                UpgradeButton.GetComponent<Text>().text = "The Claw";
+                UpgradeButton.GetComponent<Text>().text = "$1500: The Claw";
                 GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .7f;
             }
         }
         else if (hasUpgrade == 2) {
             if(pickUpgrade3()) {
                 hasUpgrade = 3;
-                UpgradeButton.GetComponent<Text>().text = "Bigger Picker Upper";
+                UpgradeButton.GetComponent<Text>().text = "$5000: Bigger Picker Upper";
                 GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .6f;
             }
         }
         else if (hasUpgrade == 3) {
             if(pickUpgrade4()) {
                 hasUpgrade = 4;
-                UpgradeButton.GetComponent<Text>().text = "Quacuum";
+                UpgradeButton.GetComponent<Text>().text = "$10000: Quacuum";
                 GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .5f;
             }
         }
@@ -156,8 +156,8 @@ public class Upgrades : MonoBehaviour
         return false;
     }
     public bool pickUpgrade2() {
-        if (GlobalVariables.money >= 300) {
-            GlobalVariables.money -= 100;
+        if (GlobalVariables.money >= 500) {
+            GlobalVariables.money -= 500;
             dragDrop.numberCanPickUp = 5;
             return true;
         }
@@ -165,7 +165,7 @@ public class Upgrades : MonoBehaviour
     }
     public bool pickUpgrade3() {
         if (GlobalVariables.money >= 1500) {
-            GlobalVariables.money -= 100;
+            GlobalVariables.money -= 1500;
             dragDrop.numberCanPickUp = 10;
             return true;
         }
@@ -173,7 +173,7 @@ public class Upgrades : MonoBehaviour
     }
     public bool pickUpgrade4() {
         if (GlobalVariables.money >= 5000) {
-            GlobalVariables.money -= 100;
+            GlobalVariables.money -= 5000;
             dragDrop.numberCanPickUp = 20;
             return true;
         }
@@ -181,7 +181,7 @@ public class Upgrades : MonoBehaviour
     }
     public bool pickUpgrade5() {
         if (GlobalVariables.money >= 10000) {
-            GlobalVariables.money -= 100;
+            GlobalVariables.money -= 10000;
             dragDrop.numberCanPickUp = 50;
             return true;
         }
