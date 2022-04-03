@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class DragDrop : MonoBehaviour
 {
 
@@ -35,6 +35,10 @@ public class DragDrop : MonoBehaviour
                 duckList[i].MoveDuck();
             }
         }
+
+        if (GlobalVariables.population >= 1000) {
+            SceneManager.LoadScene("FinalBoss");
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other) {
@@ -61,7 +65,6 @@ public class DragDrop : MonoBehaviour
     }
 
     private void OnMouseUp() {
-        Debug.Log("ONMOUSEUP");
         MouseIsDown = false;
         MouseDrag = false;
         for (int i = 0; i < duckList.Count; i++) {

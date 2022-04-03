@@ -15,6 +15,8 @@ public static class GlobalVariables
     public static float currentSpawnRate = 1f;
     public static int waterPerSec = 0;
     public static int foodPerSec = 0;
+    public static int BossHealth = 100000;
+    public static bool finalTime = false;
     public static List<string> upgrades = new List<string>();
     public static bool Timer(ref bool isChanging, ref float timer) {
       if (isChanging)

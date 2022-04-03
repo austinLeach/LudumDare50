@@ -7,7 +7,6 @@ public class FinalBoss : MonoBehaviour
 {
     public GameObject BossText;
     public Slider slider;
-    int BossHealth = 100000;
     float startTimer = 20f;
     bool start = true;
     bool firing = true;
@@ -15,12 +14,13 @@ public class FinalBoss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        slider.maxValue = BossHealth;
-        GlobalVariables.upgrades.Add("1");
-        GlobalVariables.upgrades.Add("2");
-        GlobalVariables.upgrades.Add("3");
-        GlobalVariables.upgrades.Add("4");
-        GlobalVariables.upgrades.Add("5");
+        GlobalVariables.finalTime = true;
+        slider.maxValue = GlobalVariables.BossHealth;
+        // GlobalVariables.upgrades.Add("1");
+        // GlobalVariables.upgrades.Add("2");
+        // GlobalVariables.upgrades.Add("3");
+        // GlobalVariables.upgrades.Add("4");
+        // GlobalVariables.upgrades.Add("5");
     }
 
     // Update is called once per frame
@@ -35,53 +35,43 @@ public class FinalBoss : MonoBehaviour
             switch (GlobalVariables.upgrades.Count) {
                 case 1:
                     Debug.Log("case 1");
-                    BossHealth -= 10;
+                    GlobalVariables.BossHealth -= 10;
                     break;
                 case 2:
                     Debug.Log("case 2");
-                    BossHealth -= 25;
+                    GlobalVariables.BossHealth -= 25;
                     break;
                 case 3:
                     Debug.Log("case 3");
-                    BossHealth -= 50;
+                    GlobalVariables.BossHealth -= 50;
                     break;
                 case 4:
                     Debug.Log("case 4");
-                    BossHealth -= 50;
-                    if (!firing) {
-                        BossHealth -= 2500;
-                        firing = true;
-                        firingTimer = 2f;
-                    }
+                    GlobalVariables.BossHealth -= 50;
                     break;
                 case 5:
                     Debug.Log("case 5");
-                    BossHealth -= 75;
-                    if (!firing) {
-                        BossHealth -= 2500;
-                        firing = true;
-                        firingTimer = 2f;
-                    }
+                    GlobalVariables.BossHealth -= 75;
                     if (startTimer < 3f){
-                        BossHealth -= 1000;
+                        GlobalVariables.BossHealth -= 1000;
                     }
                     break;
                 default:
-                BossHealth -= 5;
+                
                     break;
             }
-            setHealth(BossHealth);
+            setHealth(GlobalVariables.BossHealth);
         } 
         else {
             Debug.Log("Game Over");
         }
 
-        if (BossHealth < 0) {
+        if (GlobalVariables.BossHealth < 0) {
             Debug.Log("WIN");
         }
     }
 
-    void setHealth(int health) {
+    public void setHealth(int health) {
         slider.value = health;
     }
 }
