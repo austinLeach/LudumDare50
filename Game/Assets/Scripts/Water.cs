@@ -10,7 +10,7 @@ public class Water : MonoBehaviour
     {
         if (GlobalVariables.waterPerSec > 0 && !IsInvoking("GenerateWater"))
         {
-            InvokeRepeating("GenerateWater", 1f, 1f);
+            InvokeRepeating("GenerateWater", 0.1f, 0.1f);
             Debug.Log("Start invoke");
         }
         else if (GlobalVariables.waterPerSec <= 0 && IsInvoking("GenerateWater"))
@@ -22,7 +22,22 @@ public class Water : MonoBehaviour
 
     private void FixedUpdate()
     {
-        GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.15f);
+        if (GlobalVariables.population > 700)
+        {
+            GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.18f);
+        }
+        else if (GlobalVariables.population > 500)
+        {
+            GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.12f);
+        }
+        else if (GlobalVariables.population > 250)
+        {
+            GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.08f);
+        }
+        else
+        {
+            GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.06f);
+        }
     }
 
     private void GenerateWater()
@@ -39,7 +54,7 @@ public class Water : MonoBehaviour
         Duck duck = collision.GetComponent<Duck>();
         if (duck)
         {
-            GlobalVariables.waterPerSec++;
+            GlobalVariables.waterPerSec += 0.1f;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -47,7 +62,7 @@ public class Water : MonoBehaviour
         Duck duck = collision.GetComponent<Duck>();
         if (duck)
         {
-            GlobalVariables.waterPerSec--;
+            GlobalVariables.waterPerSec -= 0.1f;
         }
     }
 }

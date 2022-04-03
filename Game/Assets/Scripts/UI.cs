@@ -21,10 +21,10 @@ public class UI : MonoBehaviour
         godSlider.maxValue = GlobalVariables.sliderMax;
 
         foodSlider.value = GlobalVariables.initialSliderValue;
-        godSlider.value = GlobalVariables.initialSliderValue + 100;
+        godSlider.value = GlobalVariables.initialSliderValue;// + 100;
         waterSlider.value = GlobalVariables.initialSliderValue;
 
-       godSlider.maxValue = 1000;
+       godSlider.maxValue = 250;
     }
 
     // Update is called once per frame
@@ -40,17 +40,17 @@ public class UI : MonoBehaviour
 
     private void ChangeGodColor()
     {
-        if (godSlider.value < 500)
-            godSliderFill.color = Color.green;
-        else if (godSlider.value < 750)
-        godSliderFill.color = new Color(1f, 0.6f, 0f);
-        else if (godSlider.value >= 750)
+        if (godSlider.value < godSlider.maxValue * 0.25)
             godSliderFill.color = Color.red;
+        else if (godSlider.value < godSlider.maxValue * 0.5)
+            godSliderFill.color = new Color(1f, 0.6f, 0f);
+        else if (godSlider.value >= godSlider.maxValue * 0.75)
+            godSliderFill.color = Color.green;
     }
 
     private void UpdateSliders()
     {
-        godSlider.value = GlobalVariables.population;
+        godSlider.value = GlobalVariables.godHappiness;
         foodSlider.value = GlobalVariables.food;
         waterSlider.value = GlobalVariables.water;
     }

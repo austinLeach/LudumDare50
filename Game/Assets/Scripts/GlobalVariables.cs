@@ -9,12 +9,12 @@ public static class GlobalVariables
     public static float food = 100f;
     public static float water = 100f;
     public static int population = 0;
-    public static float godHappiness = 0f;
+    public static float godHappiness = 250f;
     public static int initialSliderValue = 100;
     public static int moneyPerSec = 0;
     public static float currentSpawnRate = 1f;
-    public static int waterPerSec = 0;
-    public static int foodPerSec = 0;
+    public static float waterPerSec = 0;
+    public static float foodPerSec = 0;
     public static int BossHealth = 100000;
     public static bool finalTime = false;
     public static bool nukeCollided = false;

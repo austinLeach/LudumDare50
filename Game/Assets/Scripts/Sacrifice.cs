@@ -15,8 +15,28 @@ public class Sacrifice : MonoBehaviour
             {
                 Destroy(duckList[0].gameObject);
                 GlobalVariables.population--;
-                GlobalVariables.godHappiness += 2;
-                if(GlobalVariables.godHappiness > GlobalVariables.sliderMax)
+                if (GlobalVariables.population > 700)
+                {
+                    GlobalVariables.godHappiness += 2;
+                }
+                else if (GlobalVariables.population > 500)
+                {
+                    GlobalVariables.godHappiness += 3;
+                }
+                else if (GlobalVariables.population > 250)
+                {
+                    GlobalVariables.godHappiness += 5;
+                }
+                else if (GlobalVariables.population > 100)
+                {
+                    GlobalVariables.godHappiness += 8;
+                }
+                else
+                {
+                    GlobalVariables.godHappiness += 10;
+                }
+
+                if (GlobalVariables.godHappiness > GlobalVariables.sliderMax)
                 {
                     GlobalVariables.godHappiness = GlobalVariables.sliderMax;
                 }
@@ -26,7 +46,23 @@ public class Sacrifice : MonoBehaviour
 
     private void FixedUpdate()
     {
-        GlobalVariables.godHappiness = GlobalVariables.population / 4f;
+        if(GlobalVariables.population > 700)
+        {
+            GlobalVariables.godHappiness -= Time.deltaTime * (Time.time / 10);
+        }
+        else if(GlobalVariables.population > 500)
+        {
+            GlobalVariables.godHappiness -= Time.deltaTime * (Time.time / 15);
+        }
+        else if(GlobalVariables.population > 250)
+        {
+            GlobalVariables.godHappiness -= Time.deltaTime * (Time.time / 25);
+        }
+        else
+        {
+            GlobalVariables.godHappiness -= Time.deltaTime * (Time.time / 30);
+        }
+        //Debug.Log("GH: " + GlobalVariables.godHappiness);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
