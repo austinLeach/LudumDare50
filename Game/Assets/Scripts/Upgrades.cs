@@ -23,15 +23,13 @@ public class Upgrades : MonoBehaviour
                 hasDamage = 1;
                 DamageButton.GetComponent<Text>().text = "Egg-Quacker";
                 GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .8f;
-                Debug.Log(GlobalVariables.currentSpawnRate);
             }
         }
         else if (hasDamage == 1) {
             if(Damage2()) {
                 hasDamage = 2;
                 DamageButton.GetComponent<Text>().text = "Quack-19";
-                GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .5f;
-                Debug.Log(GlobalVariables.currentSpawnRate);
+                GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .7f;
             }
         }
         else if (hasDamage == 2) {
@@ -39,7 +37,6 @@ public class Upgrades : MonoBehaviour
                 hasDamage = 3;
                 DamageButton.GetComponent<Text>().text = "Quack-tillery";
                 GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .7f;
-                Debug.Log(GlobalVariables.currentSpawnRate);
             }
         }
         else if (hasDamage == 3) {
@@ -47,7 +44,13 @@ public class Upgrades : MonoBehaviour
                 hasDamage = 4;
                 DamageButton.GetComponent<Text>().text = "M.O.A.Q";
                 GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .6f;
-                Debug.Log(GlobalVariables.currentSpawnRate);
+            }
+        }
+        else if (hasDamage == 4 && hasUpgrade == 5) {
+            if(Damage5()) {
+                hasDamage = 5;
+                DamageButton.GetComponent<Text>().text = "Quacked Out Damage";
+                GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .2f;
             }
         }
         else if (hasDamage == 4) {
@@ -55,7 +58,6 @@ public class Upgrades : MonoBehaviour
                 hasDamage = 5;
                 DamageButton.GetComponent<Text>().text = "Quacked Out Damage";
                 GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .5f;
-                Debug.Log(GlobalVariables.currentSpawnRate);
             }
         }
     }
@@ -66,15 +68,13 @@ public class Upgrades : MonoBehaviour
                 hasUpgrade = 1;
                 UpgradeButton.GetComponent<Text>().text = "Lasso";
                 GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .8f;
-                Debug.Log(GlobalVariables.currentSpawnRate);
             }
         }
         else if (hasUpgrade == 1) {
             if(pickUpgrade2()) {
                 hasUpgrade = 2;
                 UpgradeButton.GetComponent<Text>().text = "The Claw";
-                GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .5f;
-                Debug.Log(GlobalVariables.currentSpawnRate);
+                GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .7f;
             }
         }
         else if (hasUpgrade == 2) {
@@ -82,7 +82,6 @@ public class Upgrades : MonoBehaviour
                 hasUpgrade = 3;
                 UpgradeButton.GetComponent<Text>().text = "Bigger Picker Upper";
                 GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .7f;
-                Debug.Log(GlobalVariables.currentSpawnRate);
             }
         }
         else if (hasUpgrade == 3) {
@@ -90,7 +89,13 @@ public class Upgrades : MonoBehaviour
                 hasUpgrade = 4;
                 UpgradeButton.GetComponent<Text>().text = "Quacuum";
                 GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .6f;
-                Debug.Log(GlobalVariables.currentSpawnRate);
+            }
+        }
+        else if (hasDamage == 5 && hasUpgrade == 4) {
+            if(pickUpgrade5()) {
+                hasUpgrade = 5;
+                UpgradeButton.GetComponent<Text>().text = "Maxed Out Grabber";
+                GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .2f;
             }
         }
         else if (hasUpgrade == 4) {
@@ -98,7 +103,6 @@ public class Upgrades : MonoBehaviour
                 hasUpgrade = 5;
                 UpgradeButton.GetComponent<Text>().text = "Maxed Out Grabber";
                 GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .5f;
-                Debug.Log(GlobalVariables.currentSpawnRate);
             }
         }
     }
