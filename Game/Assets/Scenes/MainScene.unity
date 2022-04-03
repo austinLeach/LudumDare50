@@ -5963,6 +5963,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.7709743
       objectReference: {fileID: 0}
+    - target: {fileID: 7056244042435270564, guid: 191d5a6db51b0dc4d872f1667d176ccd, type: 3}
+      propertyPath: dragDrop
+      value: 
+      objectReference: {fileID: 467625427}
     - target: {fileID: 7056244042435270565, guid: 191d5a6db51b0dc4d872f1667d176ccd, type: 3}
       propertyPath: m_RootOrder
       value: 1

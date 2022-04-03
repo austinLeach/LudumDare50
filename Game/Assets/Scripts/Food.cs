@@ -10,7 +10,10 @@ public class Food : MonoBehaviour
     {
         if (GlobalVariables.foodPerSec > 0 && !IsInvoking("GenerateFood"))
         {
-            InvokeRepeating("GenerateFood", 1f, 1f);
+            //GenerateFood: function name
+            //second parameter: amount of time til it starts
+            //third parameter: amount of time in between repeats
+            InvokeRepeating("GenerateFood", 0.1f, 0.1f);
             Debug.Log("Start invoke");
         }
         else if (GlobalVariables.foodPerSec <= 0 && IsInvoking("GenerateFood"))
@@ -22,7 +25,22 @@ public class Food : MonoBehaviour
 
     private void FixedUpdate()
     {
-        GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.10f);
+        if(GlobalVariables.population > 700)
+        {
+            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.2f);
+        }
+        else if(GlobalVariables.population > 500)
+        {
+            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.13f);
+        }
+        else if(GlobalVariables.population > 250)
+        {
+            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.10f);
+        }
+        else
+        {
+            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.08f);
+        }
     }
 
     private void GenerateFood()
@@ -32,6 +50,7 @@ public class Food : MonoBehaviour
         {
             GlobalVariables.food = GlobalVariables.sliderMax;
         }
+        Debug.Log("fps: " + GlobalVariables.foodPerSec);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -39,7 +58,7 @@ public class Food : MonoBehaviour
         Duck duck = collision.GetComponent<Duck>();
         if (duck)
         {
-            GlobalVariables.foodPerSec++;
+            GlobalVariables.foodPerSec += 0.1f;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -47,7 +66,7 @@ public class Food : MonoBehaviour
         Duck duck = collision.GetComponent<Duck>();
         if (duck)
         {
-            GlobalVariables.foodPerSec--;
+            GlobalVariables.foodPerSec -= 0.1f;
         }
     }
 }

@@ -15,7 +15,7 @@ public class Sacrifice : MonoBehaviour
             {
                 Destroy(duckList[0].gameObject);
                 GlobalVariables.population--;
-                GlobalVariables.godHappiness += 2;
+                GlobalVariables.godHappiness += 5;
                 if(GlobalVariables.godHappiness > GlobalVariables.sliderMax)
                 {
                     GlobalVariables.godHappiness = GlobalVariables.sliderMax;
@@ -26,7 +26,23 @@ public class Sacrifice : MonoBehaviour
 
     private void FixedUpdate()
     {
-        GlobalVariables.godHappiness = GlobalVariables.population / 4f;
+        if(GlobalVariables.population > 700)
+        {
+            GlobalVariables.godHappiness -= Time.deltaTime * (Time.time / 3);
+        }
+        else if(GlobalVariables.population > 500)
+        {
+            GlobalVariables.godHappiness -= Time.deltaTime * (Time.time / 5);
+        }
+        else if(GlobalVariables.population > 250)
+        {
+            GlobalVariables.godHappiness -= Time.deltaTime * (Time.time / 7);
+        }
+        else
+        {
+            GlobalVariables.godHappiness -= Time.deltaTime * (Time.time / 10);
+        }
+        Debug.Log("GH: " + GlobalVariables.godHappiness);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

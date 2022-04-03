@@ -56,10 +56,10 @@ public class Duck : MonoBehaviour
         ReturnQuack();
 
         if (insideSac && !movingDuck) {
-            DestroyDuck();
+            //DestroyDuck();
         }
         if (insideBoundary && !movingDuck) {
-            DestroyDuck();
+            //DestroyDuck();
         }
     }
 
