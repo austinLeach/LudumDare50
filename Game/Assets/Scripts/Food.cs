@@ -18,7 +18,7 @@ public class Food : MonoBehaviour
             CancelInvoke("GenerateFood");
             Debug.Log("Cancel invoke");
         }
-        GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.03f);
+        GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.10f);
     }
 
     private void GenerateFood()

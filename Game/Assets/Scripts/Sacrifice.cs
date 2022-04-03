@@ -16,6 +16,10 @@ public class Sacrifice : MonoBehaviour
                 Destroy(duckList[0].gameObject);
                 GlobalVariables.population--;
                 GlobalVariables.godHappiness += 2;
+                if(GlobalVariables.godHappiness > GlobalVariables.sliderMax)
+                {
+                    GlobalVariables.godHappiness = GlobalVariables.sliderMax;
+                }
             }
         }
         GlobalVariables.godHappiness -= Time.deltaTime * (Time.time/20);
