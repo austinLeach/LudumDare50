@@ -45,7 +45,7 @@ public class DragDrop : MonoBehaviour
             }
         }
 
-        if (GlobalVariables.population >= 1000) {
+        if (GlobalVariables.population >= 1000 || GlobalVariables.food < 0 || GlobalVariables.water < 0) {
             SceneManager.LoadScene("FinalBoss");
         }
     }
