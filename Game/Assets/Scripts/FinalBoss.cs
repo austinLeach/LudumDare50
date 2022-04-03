@@ -51,8 +51,8 @@ public class FinalBoss : MonoBehaviour
                     break;
                 case 5:
                     Debug.Log("case 5");
-                    GlobalVariables.BossHealth -= 75;
-                    if (startTimer < 3f){
+                    GlobalVariables.BossHealth -= 50;
+                    if (GlobalVariables.nukeCollided){
                         GlobalVariables.BossHealth -= 1000;
                     }
                     break;
@@ -68,6 +68,7 @@ public class FinalBoss : MonoBehaviour
 
         if (GlobalVariables.BossHealth < 0) {
             Debug.Log("WIN");
+            GlobalVariables.wonGame = true;
         }
     }
 

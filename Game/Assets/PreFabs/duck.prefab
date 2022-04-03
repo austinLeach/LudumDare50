@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4423763493599959354}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.2, y: 7.1, z: 0}
-  m_LocalScale: {x: 9.375632, y: 6.448547, z: 0.3029956}
+  m_LocalPosition: {x: -14.54, y: -9.15, z: 0}
+  m_LocalScale: {x: 0.23317364, y: 0.2383892, z: 0.025610982}
   m_Children: []
   m_Father: {fileID: 1690767229808291818}
   m_RootOrder: 0
@@ -97,7 +97,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1690767229808291818
 Transform:
   m_ObjectHideFlags: 0
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 8277670690359473895}
   - component: {fileID: 8277670690359473888}
   m_Layer: 0
-  m_Name: asian guy
+  m_Name: duck
   m_TagString: asianDuck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,8 +141,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8277670690359473889}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.29, y: -2.14, z: 0}
-  m_LocalScale: {x: 0.03242448, y: 0.04714241, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 0.4836, y: 0.4836, z: 0.4836}
   m_Children:
   - {fileID: 1690767229808291818}
   m_Father: {fileID: 0}
@@ -187,8 +187,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e3ec2cadeefd8c448877b4fad8757c4e, type: 3}
+  m_SortingOrder: 10
+  m_Sprite: {fileID: 21300000, guid: ccd28f163579c9d43ac062ef4644d6d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -233,18 +233,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.03125429, y: -0.06250858}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 18.24, y: 13.44}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 18.24, y: 13.44}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 18.24, y: 13.44}
+  m_Size: {x: 0.73741436, y: 0.8756447}
   m_EdgeRadius: 0
 --- !u!114 &8277670690359473888
 MonoBehaviour:
@@ -258,12 +258,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45dee70d3b8b9a4eb2f22b4d1193c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wandering: 1
   movingDuck: 0
   insideSac: 0
   insideBoundary: 0
   quack: {fileID: 6436969837257588853}
-  death: {fileID: 0}
-  sound: {fileID: 8300000, guid: 32ac3590b1434644696c1e2d77099096, type: 3}
-  movingDuck: 0
-  insideSac: 0
-  insideBoundary: 0

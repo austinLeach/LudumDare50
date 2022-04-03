@@ -17,6 +17,8 @@ public static class GlobalVariables
     public static int foodPerSec = 0;
     public static int BossHealth = 100000;
     public static bool finalTime = false;
+    public static bool nukeCollided = false;
+    public static bool wonGame = false;
     public static List<string> upgrades = new List<string>();
     public static bool Timer(ref bool isChanging, ref float timer) {
       if (isChanging)

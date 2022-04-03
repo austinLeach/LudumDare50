@@ -6,7 +6,6 @@ public class DragDrop : MonoBehaviour
 {
 
     public BoxCollider2D Hitbox;
-    public BoxCollider2D BoxCollider;
     public bool MouseIsDown = false;
     public bool MouseDrag = false;
 
@@ -22,12 +21,22 @@ public class DragDrop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetMouseButtonDown(0)) {
+            MouseIsDown = true;
+            MouseDrag = true;
+        }
+        if (Input.GetMouseButtonUp(0)) {
+            MouseIsDown = false;
+            for (int i = 0; i < duckList.Count; i++) {
+            duckList[i].movingDuck = false;
+            }
+            duckList.Clear();
+        }
     }
 
     private void FixedUpdate() {
         Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouse.z = -1;
+        mouse.z = -2;
         transform.position = mouse;
         if (MouseIsDown && MouseDrag) {
             for (int i = 0; i < duckList.Count; i++) {
@@ -54,22 +63,5 @@ public class DragDrop : MonoBehaviour
         if (duck && !MouseDrag) {
             duckList.Remove(duck);
         }
-    }
-
-    private void OnMouseDown() {
-        MouseIsDown = true;
-    }
-
-    private void OnMouseDrag() {
-        MouseDrag = true;
-    }
-
-    private void OnMouseUp() {
-        MouseIsDown = false;
-        MouseDrag = false;
-        for (int i = 0; i < duckList.Count; i++) {
-            duckList[i].movingDuck = false;
-        }
-        duckList.Clear();
     }
 }

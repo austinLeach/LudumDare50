@@ -128,8 +128,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 72}
-  m_SizeDelta: {x: 207.1985, y: 86.1887}
+  m_AnchoredPosition: {x: -0.3416, y: 72}
+  m_SizeDelta: {x: 239.3212, y: 86.1887}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8778890132428406305
 CanvasRenderer:
@@ -172,7 +172,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Upgrade Damage 1
+  m_Text: Quack-a-Phone
 --- !u!114 &8778890132428406311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,7 +308,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Upgrade Pointer 1
+  m_Text: Double Picker
 --- !u!114 &8778890133021926671
 MonoBehaviour:
   m_ObjectHideFlags: 0

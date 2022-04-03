@@ -5,7 +5,7 @@ using UnityEngine;
 public class Duck : MonoBehaviour
 {
     Vector3 mouseOffset;
-    bool wandering = true;
+    public bool wandering = true;
     float wanderTimer;
 
     bool cooldown = false;
@@ -65,12 +65,12 @@ public class Duck : MonoBehaviour
 
     public void CheckOffset() {
         mouseOffset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouseOffset.z = 0;
+        mouseOffset.z = -1;
     }
 
     public void MoveDuck() {
         Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouse.z = 0;
+        mouse.z = -1;
         transform.position = mouse + mouseOffset;
     }
 
