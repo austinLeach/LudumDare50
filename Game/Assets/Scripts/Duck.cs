@@ -78,15 +78,23 @@ public class Duck : MonoBehaviour
         if (wandering || cooldown) {
             return;
         }
-        float zero = 0;
-        float max = 2;
-        wanderTimer = Random.Range(zero, max);
-        velocityX = Random.Range(zero, 1f) - .5f;
-        velocityY = Random.Range(zero, 1f) - .5f;
-        wandering = true;
-        wanderTimer = Random.Range(zero, .5f);
-        cooldown = true;
-        cooldownTimer = Random.Range(3f, 5f);
+        if (!GlobalVariables.finalTime) {
+            wanderTimer = Random.Range(0f, 2f);
+            velocityX = Random.Range(0f, 5f) - 2.5f;
+            velocityY = Random.Range(0f, 5f) - 2.5f;
+            wandering = true;
+            wanderTimer = Random.Range(0f, 2f);
+            cooldown = true;
+            cooldownTimer = Random.Range(3f, 5f);
+        } else {
+            wanderTimer = Random.Range(0f, .5f);
+            velocityX = Random.Range(0f, 1f) - .5f;
+            velocityY = Random.Range(0f, 1f) - .5f;
+            wandering = true;
+            wanderTimer = Random.Range(0f, .5f);
+            cooldown = true;
+            cooldownTimer = Random.Range(3f, 5f);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
