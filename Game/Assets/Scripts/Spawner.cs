@@ -17,6 +17,7 @@ public class Spawner : MonoBehaviour
 
     bool isSpawning = false;
     public float spawnRate = GlobalVariables.currentSpawnRate;
+    public float staticSpawnRate = GlobalVariables.currentSpawnRate;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +42,7 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        staticSpawnRate = GlobalVariables.currentSpawnRate;
         Spawn();
         GlobalVariables.Timer(ref isSpawning, ref spawnRate);
     }
