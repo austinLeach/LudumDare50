@@ -555,7 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd198ef901e00b43ba1082240d0ef6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cloud: {fileID: 3344168313182087528, guid: c65a86ea4b394d347b98844bbd58eeae, type: 3}
+  cloud: {fileID: 2820778889240454264, guid: 24d5ec4547fb03942a4a198275400f54, type: 3}
   spawnBox: {fileID: 487758397}
   spawnRate: 0.2
 --- !u!61 &487758397
