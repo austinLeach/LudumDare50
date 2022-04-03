@@ -22,6 +22,8 @@ public static class GlobalVariables
     public static bool LostToFood = false;
     public static bool LostToWater = false;
     public static bool LostToGod = false;
+    public static float timeInAudio1 = 0f;
+    public static float timeInAudio2 = 0f;
     public static List<string> upgrades = new List<string>();
     public static bool Timer(ref bool isChanging, ref float timer) {
       if (isChanging)

@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class inbetween2 : MonoBehaviour
 {
+    public AudioSource audio;
     // Start is called before the first frame update
     public void GoToFinalBoss() {
+        GlobalVariables.timeInAudio2 = audio.time;
         SceneManager.LoadScene("FinalBoss");
     }
     private void Start() {
