@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 8277670690359473892}
   - component: {fileID: 8277670690359473895}
   - component: {fileID: 8277670690359473888}
+  - component: {fileID: 856874394311183532}
   m_Layer: 0
   m_Name: duck
   m_TagString: asianDuck
@@ -188,7 +189,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: ccd28f163579c9d43ac062ef4644d6d5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6f6ec017c5e073b41b1d06f11c8ae2c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -263,3 +264,22 @@ MonoBehaviour:
   insideSac: 0
   insideBoundary: 0
   quack: {fileID: 6436969837257588853}
+--- !u!95 &856874394311183532
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8277670690359473889}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e61fc6aa9da984449ad1dfa67f536a7c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

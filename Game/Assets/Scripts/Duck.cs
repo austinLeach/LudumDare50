@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Duck : MonoBehaviour
 {
+    Animator duckAnimator;
     Vector3 mouseOffset;
     public bool wandering = true;
     float wanderTimer;
@@ -12,6 +13,7 @@ public class Duck : MonoBehaviour
     float cooldownTimer;
     float velocityX = 0;
     float velocityY = 0;
+    bool firstSpawn = true;
 
     public bool movingDuck = false;
     public bool insideSac = false;
@@ -25,6 +27,8 @@ public class Duck : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //set up animator
+        duckAnimator = GetComponent<Animator>();
         wanderTimer = Random.Range(0f, 4f);
         quack.SetActive(false);
         if (GlobalVariables.finalTime) {
@@ -37,6 +41,17 @@ public class Duck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //stop duck walking in place on spawn
+        if (!firstSpawn)
+        {
+            duckAnimator.SetBool("wandering", wandering);
+        }
+        else
+        {
+            duckAnimator.SetBool("wandering", false);    
+        }
+        
+
         if (GlobalVariables.finalTime && !initializedQuack) {
             quackTimer = Random.Range(0f, 3f);
             initializedQuack = true;
@@ -83,18 +98,20 @@ public class Duck : MonoBehaviour
             velocityX = Random.Range(0f, 5f) - 2.5f;
             velocityY = Random.Range(0f, 5f) - 2.5f;
             wandering = true;
+            duckAnimator.SetBool("wandering", wandering);
             wanderTimer = Random.Range(0f, 2f);
             cooldown = true;
             cooldownTimer = Random.Range(3f, 5f);
         } else {
             wanderTimer = Random.Range(0f, .5f);
             velocityX = Random.Range(0f, 1f) - .5f;
-            velocityY = Random.Range(0f, 1f) - .5f;
+            velocityY = Random.Range(0f, 1f) - .5f;            
             wandering = true;
             wanderTimer = Random.Range(0f, .5f);
             cooldown = true;
             cooldownTimer = Random.Range(3f, 5f);
         }
+        firstSpawn = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
