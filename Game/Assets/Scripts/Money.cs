@@ -30,11 +30,11 @@ public class Money : MonoBehaviour
         Duck duck = collision.GetComponent<Duck>();
         if (duck)
         {
-            if (GlobalVariables.population > 500)
+            if (GlobalVariables.population > 800)
                 GlobalVariables.moneyPerSec += 20;
-            else if (GlobalVariables.population > 300)
+            else if (GlobalVariables.population > 500)
                 GlobalVariables.moneyPerSec += 10;
-            else if (GlobalVariables.population > 100) 
+            else if (GlobalVariables.population > 200) 
                 GlobalVariables.moneyPerSec += 5;
             else
                 GlobalVariables.moneyPerSec++;
@@ -45,11 +45,11 @@ public class Money : MonoBehaviour
         Duck duck = collision.GetComponent<Duck>();
         if (duck)
         {
-            if (GlobalVariables.population > 500)
+            if (GlobalVariables.population > 800)
                 GlobalVariables.moneyPerSec -= 20;
-            else if (GlobalVariables.population > 300)
+            else if (GlobalVariables.population > 500)
                 GlobalVariables.moneyPerSec -= 10;
-            else if (GlobalVariables.population > 100)
+            else if (GlobalVariables.population > 200)
                 GlobalVariables.moneyPerSec -= 5;
             else 
                 GlobalVariables.moneyPerSec--;
