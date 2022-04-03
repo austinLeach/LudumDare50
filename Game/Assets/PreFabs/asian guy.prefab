@@ -262,3 +262,8 @@ MonoBehaviour:
   insideSac: 0
   insideBoundary: 0
   quack: {fileID: 6436969837257588853}
+  death: {fileID: 0}
+  sound: {fileID: 8300000, guid: 32ac3590b1434644696c1e2d77099096, type: 3}
+  movingDuck: 0
+  insideSac: 0
+  insideBoundary: 0

@@ -18,6 +18,10 @@ public class Water : MonoBehaviour
             CancelInvoke("GenerateWater");
             Debug.Log("Cancel invoke");
         }
+    }
+
+    private void FixedUpdate()
+    {
         GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.15f);
     }
 

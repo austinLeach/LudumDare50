@@ -22,7 +22,11 @@ public class Sacrifice : MonoBehaviour
                 }
             }
         }
-        GlobalVariables.godHappiness -= Time.deltaTime * (Time.time/20);
+    }
+
+    private void FixedUpdate()
+    {
+        GlobalVariables.godHappiness = GlobalVariables.population / 4f;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
