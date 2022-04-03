@@ -27,11 +27,11 @@ public class Food : MonoBehaviour
     {
         if(GlobalVariables.population > 700)
         {
-            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.2f);
+            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.15f);
         }
         else if(GlobalVariables.population > 500)
         {
-            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.13f);
+            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.12f);
         }
         else if(GlobalVariables.population > 250)
         {
@@ -39,7 +39,7 @@ public class Food : MonoBehaviour
         }
         else
         {
-            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.08f);
+            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.04f);
         }
     }
 
