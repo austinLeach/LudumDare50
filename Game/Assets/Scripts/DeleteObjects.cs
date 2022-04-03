@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class DeleteObjects : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
-        
+       
+        BoxCollider2D boxCollider = new BoxCollider2D();   
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //rigidBody2D = GetComponent<Rigidbody2D>();
-        Rigidbody2D rigidBody2D;
-
-
+    
 
     }
 
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(collision.gameObject);
+    }
 
 }
