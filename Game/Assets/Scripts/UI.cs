@@ -42,9 +42,9 @@ public class UI : MonoBehaviour
     {
 
         if (godSlider.value < .5 * GlobalVariables.sliderMax)
-            godSliderFill.color = Color.red;
-        else if (godSlider.value >= .5 * GlobalVariables.sliderMax)
             godSliderFill.color = Color.green;
+        else if (godSlider.value >= .5 * GlobalVariables.sliderMax)
+            godSliderFill.color = Color.red;
     }
 
     private void UpdateSliders()

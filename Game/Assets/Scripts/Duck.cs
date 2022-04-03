@@ -7,7 +7,7 @@ public class Duck : MonoBehaviour
     Vector3 mouseOffset;
     bool wandering = true;
     float wanderTimer = 3f;
-
+    
     bool cooldown = false;
     float cooldownTimer;
     float velocityX = 0;

@@ -144,5 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45dee70d3b8b9a4eb2f22b4d1193c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragDrop: {fileID: 6644297416000328167, guid: e969c3d53f64dae4f9dd932e7728121c, type: 3}
+  death: {fileID: 0}
+  sound: {fileID: 8300000, guid: 32ac3590b1434644696c1e2d77099096, type: 3}
   movingDuck: 0
+  insideSac: 0
+  insideBoundary: 0
