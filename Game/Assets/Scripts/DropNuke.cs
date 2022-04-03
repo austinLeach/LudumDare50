@@ -32,7 +32,7 @@ public class DropNuke : MonoBehaviour
         projectileObject = Instantiate(nuke, position, Quaternion.identity);
         projectile = projectileObject.GetComponent<Projectiles>();
         shooting = true;
-        shootTimer = 20f;
+        shootTimer = 20000000f;
         Vector2 direction = new Vector2(0.2f, 0f);
         projectile.Shoot(direction, 70); 
     }

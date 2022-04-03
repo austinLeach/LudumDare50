@@ -45,8 +45,16 @@ public class DragDrop : MonoBehaviour
             }
         }
 
-        if (GlobalVariables.population >= 1000 || GlobalVariables.food < 0 || GlobalVariables.water < 0) {
-            SceneManager.LoadScene("FinalBoss");
+        if (GlobalVariables.population >= 1000) {
+            SceneManager.LoadScene("inbetween2");
+        }
+        else if(GlobalVariables.food < 0) {
+            GlobalVariables.LostToFood = true;
+            SceneManager.LoadScene("inbetween2");
+        }
+        else if(GlobalVariables.water < 0) {
+            GlobalVariables.LostToWater = true;
+            SceneManager.LoadScene("inbetween2");
         }
     }
 

@@ -11,6 +11,7 @@ public class FinalBoss : MonoBehaviour
     bool start = true;
     bool firing = true;
     float firingTimer = 3f;
+    public GameObject FinalButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,11 +65,13 @@ public class FinalBoss : MonoBehaviour
         } 
         else {
             Debug.Log("Game Over");
+            FinalButton.SetActive(true);
         }
 
         if (GlobalVariables.BossHealth < 0) {
             Debug.Log("WIN");
             GlobalVariables.wonGame = true;
+            FinalButton.SetActive(true);
         }
     }
 

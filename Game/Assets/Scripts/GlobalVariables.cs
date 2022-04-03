@@ -19,6 +19,9 @@ public static class GlobalVariables
     public static bool finalTime = false;
     public static bool nukeCollided = false;
     public static bool wonGame = false;
+    public static bool LostToFood = false;
+    public static bool LostToWater = false;
+    public static bool LostToGod = false;
     public static List<string> upgrades = new List<string>();
     public static bool Timer(ref bool isChanging, ref float timer) {
       if (isChanging)

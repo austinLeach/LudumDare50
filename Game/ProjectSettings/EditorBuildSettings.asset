@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Inbetween1.unity
     guid: a43f6b34c78b9ed48bbb803ec439f235
+  - enabled: 1
+    path: Assets/Scenes/Inbetween2.unity
+    guid: a3ba9237ae5eb59469a6e00eb78072a3
   m_configObjects: {}
