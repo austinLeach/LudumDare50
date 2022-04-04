@@ -6,6 +6,7 @@ public class HolyCollider : MonoBehaviour
 {
     public GameObject DuckDestroyer;
     public GameObject FinalButton;
+    public GameObject DuckExplosions;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class HolyCollider : MonoBehaviour
             GlobalVariables.HolyHit = true;
             Destroy(other.gameObject);
             DuckDestroyer.SetActive(true);
+            DuckExplosions.SetActive(true);
             FinalButton.SetActive(true);
         }
     }

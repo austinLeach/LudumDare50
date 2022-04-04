@@ -13,6 +13,8 @@ public class FinalBoss : MonoBehaviour
     float firingTimer = 3f;
     public GameObject FinalButton;
     public GameObject DuckDestroyer;
+    public GameObject DuckExplosions;
+    public GameObject GodExplosions;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,7 +67,6 @@ public class FinalBoss : MonoBehaviour
             setHealth(GlobalVariables.BossHealth);
         } 
         else {
-            Debug.Log("Game Over");
             // FinalButton.SetActive(true);
         }
 
@@ -74,6 +75,8 @@ public class FinalBoss : MonoBehaviour
             GlobalVariables.wonGame = true;
             FinalButton.SetActive(true);
             DuckDestroyer.SetActive(true);
+            DuckExplosions.SetActive(true);
+            GodExplosions.SetActive(true);
             Destroy(this.gameObject);
         }
     }
