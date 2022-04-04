@@ -114,7 +114,7 @@ public class Duck : MonoBehaviour
         firstSpawn = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    private void OnTriggerStay2D(Collider2D other) {
         Boundary boundary = other.GetComponent<Boundary>();
         Sacrifice sacrifice = other.GetComponent<Sacrifice>();
         if (sacrifice) {
