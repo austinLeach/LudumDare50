@@ -8,7 +8,7 @@ public class Boundary : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerStay2D(Collider2D other) {
         Duck duck = other.GetComponent<Duck>();
-        if (duck && GlobalVariables.MouseIsDown == false) {
+        if (duck && duck.movingDuck == false) {
             duck.DestroyDuck();
         } 
     }

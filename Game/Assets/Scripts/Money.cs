@@ -30,14 +30,14 @@ public class Money : MonoBehaviour
         Duck duck = collision.GetComponent<Duck>();
         if (duck)
         {
-            if (GlobalVariables.population > 800)
-                GlobalVariables.moneyPerSec += 40;
-            else if (GlobalVariables.population > 500)
+            if (GlobalVariables.population > 300)
                 GlobalVariables.moneyPerSec += 20;
-            else if (GlobalVariables.population > 200) 
+            else if (GlobalVariables.population > 150)
                 GlobalVariables.moneyPerSec += 10;
-            else
+            else if (GlobalVariables.population > 50) 
                 GlobalVariables.moneyPerSec += 5;
+            else
+                GlobalVariables.moneyPerSec += 3;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -45,11 +45,11 @@ public class Money : MonoBehaviour
         Duck duck = collision.GetComponent<Duck>();
         if (duck)
         {
-            if (GlobalVariables.population > 800)
+            if (GlobalVariables.population > 300)
                 GlobalVariables.moneyPerSec -= 20;
-            else if (GlobalVariables.population > 500)
+            else if (GlobalVariables.population > 150)
                 GlobalVariables.moneyPerSec -= 10;
-            else if (GlobalVariables.population > 200)
+            else if (GlobalVariables.population > 50)
                 GlobalVariables.moneyPerSec -= 5;
             else 
                 GlobalVariables.moneyPerSec -= 3;
