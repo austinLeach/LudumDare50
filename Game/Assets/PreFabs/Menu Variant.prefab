@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &670390006582136080
+--- !u!1001 &7160521806771017148
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3344168313182087528, guid: c65a86ea4b394d347b98844bbd58eeae, type: 3}
       propertyPath: m_Name
-      value: duckmenu
+      value: Menu Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6624897362688198031, guid: c65a86ea4b394d347b98844bbd58eeae, type: 3}
       propertyPath: m_RootOrder
@@ -25,11 +25,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6624897362688198031, guid: c65a86ea4b394d347b98844bbd58eeae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.02
+      value: -7.92
       objectReference: {fileID: 0}
     - target: {fileID: 6624897362688198031, guid: c65a86ea4b394d347b98844bbd58eeae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.01
+      value: 0.77
       objectReference: {fileID: 0}
     - target: {fileID: 6624897362688198031, guid: c65a86ea4b394d347b98844bbd58eeae, type: 3}
       propertyPath: m_LocalPosition.z
@@ -62,10 +62,6 @@ PrefabInstance:
     - target: {fileID: 6624897362688198031, guid: c65a86ea4b394d347b98844bbd58eeae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7175818082477510532, guid: c65a86ea4b394d347b98844bbd58eeae, type: 3}
-      propertyPath: m_GravityScale
-      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c65a86ea4b394d347b98844bbd58eeae, type: 3}
