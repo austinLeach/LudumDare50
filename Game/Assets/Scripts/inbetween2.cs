@@ -8,10 +8,10 @@ public class inbetween2 : MonoBehaviour
     public AudioSource audio;
     // Start is called before the first frame update
     public void GoToFinalBoss() {
-        GlobalVariables.timeInAudio2 = audio.time;
         SceneManager.LoadScene("FinalBoss");
     }
     private void Start() {
+        audio.time = GlobalVariables.timeInAudio1;
         Text text = this.GetComponent<Text>();
         if (GlobalVariables.LostToWater) {
             text.text = "You have Failed the objective of Maintaining Water, now you must face Duck God, hopefully you have prepared for this moment well.";

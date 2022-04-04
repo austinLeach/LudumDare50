@@ -47,14 +47,22 @@ public class DragDrop : MonoBehaviour
         }
 
         if (GlobalVariables.population >= 1000) {
+            GlobalVariables.timeInAudio1 = audio.time;
             SceneManager.LoadScene("inbetween2");
         }
         else if(GlobalVariables.food < 0) {
             GlobalVariables.LostToFood = true;
+            GlobalVariables.timeInAudio1 = audio.time;
             SceneManager.LoadScene("inbetween2");
         }
         else if(GlobalVariables.water < 0) {
             GlobalVariables.LostToWater = true;
+            GlobalVariables.timeInAudio1 = audio.time;
+            SceneManager.LoadScene("inbetween2");
+        }
+        else if (GlobalVariables.godHappiness < 0) {
+            GlobalVariables.LostToGod = true;
+            GlobalVariables.timeInAudio1 = audio.time;
             SceneManager.LoadScene("inbetween2");
         }
     }
