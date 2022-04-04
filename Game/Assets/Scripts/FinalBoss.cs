@@ -61,7 +61,7 @@ public class FinalBoss : MonoBehaviour
                     }
                     break;
                 default:
-                
+                    GlobalVariables.BossHealth -= 5;
                     break;
             }
             setHealth(GlobalVariables.BossHealth);
