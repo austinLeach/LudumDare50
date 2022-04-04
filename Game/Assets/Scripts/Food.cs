@@ -43,7 +43,7 @@ public class Food : MonoBehaviour
         // else
         // {
             //GlobalVariables.food -= diff * (GlobalVariables.population * 0.04f);
-            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.20f);
+            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.18f);
         // }
 
         //DecreaseFood();

@@ -36,7 +36,7 @@ public class Water : MonoBehaviour
         // }
         // else
         // {
-            GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.20f);
+            GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.18f);
         // }
     }
 
