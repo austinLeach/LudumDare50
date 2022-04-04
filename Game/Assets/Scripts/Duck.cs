@@ -115,8 +115,10 @@ public class Duck : MonoBehaviour
     }
 
     public void DestroyDuck() {
-        Destroy(this.gameObject);
-        GlobalVariables.population--;
+        if (this.gameObject) {
+            Destroy(this.gameObject);
+            GlobalVariables.population--;
+        }
     }
 
     void Quack() {

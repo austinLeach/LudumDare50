@@ -36,7 +36,7 @@ public class Upgrades : MonoBehaviour
             if(Damage3()) {
                 hasDamage = 3;
                 DamageButton.GetComponent<Text>().text = "$10000: Quack-tillery";
-                GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .65f;
+                GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .7f;
             }
         }
         else if (hasDamage == 3) {
@@ -81,7 +81,7 @@ public class Upgrades : MonoBehaviour
             if(pickUpgrade3()) {
                 hasUpgrade = 3;
                 UpgradeButton.GetComponent<Text>().text = "$5000: Bigger Picker Upper";
-                GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .65f;
+                GlobalVariables.currentSpawnRate = GlobalVariables.currentSpawnRate * .7f;
             }
         }
         else if (hasUpgrade == 3) {

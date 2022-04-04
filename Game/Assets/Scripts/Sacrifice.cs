@@ -5,7 +5,7 @@ using UnityEngine;
 public class Sacrifice : MonoBehaviour
 {
     public DragDrop dragDrop;
-    private List<Duck> duckList = new List<Duck>();
+    public List<Duck> duckList = new List<Duck>();
     public float decreaseRate = GlobalVariables.GodTime;
     public bool decreaseHappiness = false;
     private void Update()
@@ -14,29 +14,33 @@ public class Sacrifice : MonoBehaviour
         {
             while(duckList.Count != 0)
             {
-                duckList[0].DestroyDuck();
+                if (duckList[0]) {
+                    duckList[0].DestroyDuck();
+                } else {
+                    duckList.RemoveAt(0);
+                }
                 GlobalVariables.numberOfSacrificed++;
                 // Destroy(duckList[0].gameObject);
                 // GlobalVariables.population--;
                 if (GlobalVariables.population > 700)
                 {
-                    GlobalVariables.godHappiness += 2;
+                    GlobalVariables.godHappiness += 4;
                 }
                 else if (GlobalVariables.population > 500)
                 {
-                    GlobalVariables.godHappiness += 3;
+                    GlobalVariables.godHappiness += 5;
                 }
                 else if (GlobalVariables.population > 250)
                 {
-                    GlobalVariables.godHappiness += 5;
+                    GlobalVariables.godHappiness += 8;
                 }
                 else if (GlobalVariables.population > 100)
                 {
-                    GlobalVariables.godHappiness += 8;
+                    GlobalVariables.godHappiness += 12;
                 }
                 else
                 {
-                    GlobalVariables.godHappiness += 10;
+                    GlobalVariables.godHappiness += 15;
                 }
 
                 if (GlobalVariables.godHappiness > GlobalVariables.sliderMax)

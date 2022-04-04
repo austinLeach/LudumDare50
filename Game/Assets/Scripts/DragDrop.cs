@@ -22,6 +22,7 @@ public class DragDrop : MonoBehaviour
         GlobalVariables.food = 100;
         GlobalVariables.water = 100;
         GlobalVariables.godHappiness = 250;
+        GlobalVariables.money = 20;
         GlobalVariables.foodPerSec = 0;
         GlobalVariables.waterPerSec = 0;
         GlobalVariables.moneyPerSec = 0;
@@ -29,6 +30,14 @@ public class DragDrop : MonoBehaviour
         GlobalVariables.currentSpawnRate = 1f;
         GlobalVariables.numberOfSacrificed = 0;
         GlobalVariables.upgrades.Clear();
+        GlobalVariables.BossHealth = 100000;
+        GlobalVariables.nukeCollided = false;
+        GlobalVariables.HolyHit = false;
+        GlobalVariables.wonGame = false;
+        GlobalVariables.LostToFood = false;
+        GlobalVariables.LostToWater = false;
+        GlobalVariables.LostToGod = false;
+        GlobalVariables.finalTime = false;
     }
 
     // Update is called once per frame

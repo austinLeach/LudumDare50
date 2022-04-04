@@ -44,6 +44,18 @@ public class Spawner : MonoBehaviour
     {
         staticSpawnRate = GlobalVariables.currentSpawnRate;
         Spawn();
+        if (GlobalVariables.upgrades.Count > 4) {
+            Spawn();
+            isSpawning = false;
+            Spawn();
+            isSpawning = false;
+            Spawn();
+            isSpawning = false;
+            Spawn();
+            isSpawning = false;
+            Spawn();
+            isSpawning = false;
+        }
         GlobalVariables.Timer(ref isSpawning, ref spawnRate);
     }
 
