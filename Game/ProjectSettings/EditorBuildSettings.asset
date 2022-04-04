@@ -5,25 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Austin.unity
     guid: 2038edd54d5471149b17789b94ddfe80
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 1e2a8b56d4b465841aac1463b39bf7a7
   - enabled: 1
-    path: Assets/Scenes/FinalBoss.unity
-    guid: c9384e59e980dc54a8b699e57f2f738c
+    path: Assets/Scenes/Inbetween1.unity
+    guid: a43f6b34c78b9ed48bbb803ec439f235
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 95c07872e9cf107428468974b8f9f2d7
   - enabled: 1
-    path: Assets/Scenes/Inbetween1.unity
-    guid: a43f6b34c78b9ed48bbb803ec439f235
-  - enabled: 1
     path: Assets/Scenes/Inbetween2.unity
     guid: a3ba9237ae5eb59469a6e00eb78072a3
+  - enabled: 1
+    path: Assets/Scenes/FinalBoss.unity
+    guid: c9384e59e980dc54a8b699e57f2f738c
   m_configObjects: {}
