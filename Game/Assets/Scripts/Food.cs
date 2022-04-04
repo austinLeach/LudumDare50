@@ -25,27 +25,28 @@ public class Food : MonoBehaviour
 
     private void FixedUpdate()
     {
-        /*
-        float diff = Time.deltaTime + baseDecrease;
+
+        float decrease;
+        
         if(GlobalVariables.population > 700)
         {
-            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.15f);
+            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.19f);
         }
         else if(GlobalVariables.population > 500)
         {
-            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.12f);
+            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.16f);
         }
         else if(GlobalVariables.population > 250)
         {
-            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.10f);
+            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.13f);
         }
         else
         {
             //GlobalVariables.food -= diff * (GlobalVariables.population * 0.04f);
-            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.04f);
-        }*/
+            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.08f);
+        }
 
-        DecreaseFood();
+        //DecreaseFood();
     }
 
     private void DecreaseFood()
@@ -54,8 +55,9 @@ public class Food : MonoBehaviour
          * dec 
          * min = 0 max = 14
          */
-        int dec = GlobalVariables.population / 70;
-        GlobalVariables.food -= dec + .05f;
+
+        int dec = GlobalVariables.population / 180;
+        GlobalVariables.food -= dec * .5f;
     }
 
     private void GenerateFood()
@@ -73,7 +75,7 @@ public class Food : MonoBehaviour
         Duck duck = collision.GetComponent<Duck>();
         if (duck)
         {
-            GlobalVariables.foodPerSec += 0.1f;
+            GlobalVariables.foodPerSec += 0.2f;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -81,7 +83,7 @@ public class Food : MonoBehaviour
         Duck duck = collision.GetComponent<Duck>();
         if (duck)
         {
-            GlobalVariables.foodPerSec -= 0.1f;
+            GlobalVariables.foodPerSec -= 0.2f;
         }
     }
 }
