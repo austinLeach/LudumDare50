@@ -28,23 +28,23 @@ public class Food : MonoBehaviour
 
         float decrease;
         
-        if(GlobalVariables.population > 700)
-        {
-            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.14f);
-        }
-        else if(GlobalVariables.population > 500)
-        {
-            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.12f);
-        }
-        else if(GlobalVariables.population > 250)
-        {
-            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.10f);
-        }
-        else
-        {
+        // if(GlobalVariables.population > 500)
+        // {
+        //     GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.15f);
+        // }
+        // else if(GlobalVariables.population > 250)
+        // {
+        //     GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.17f);
+        // }
+        // else if(GlobalVariables.population > 100)
+        // {
+        //     GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.18f);
+        // }
+        // else
+        // {
             //GlobalVariables.food -= diff * (GlobalVariables.population * 0.04f);
-            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.08f);
-        }
+            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.20f);
+        // }
 
         //DecreaseFood();
     }

@@ -11,11 +11,11 @@ public class FinalButton : MonoBehaviour
     private void Start() {
         Text text = this.GetComponent<Text>();
         if (GlobalVariables.wonGame) {
-            text.text = "Congratulations, you have sold enough Lemonade to Defeat God";
-            text.fontSize = 50;
+            text.text = "Congratulations, you have sold enough Lemonade to Defeat God." + " You Sacrificed " + GlobalVariables.numberOfSacrificed.ToString() + " Ducks.";
+            text.fontSize = 40;
         }
         else {
-            text.text = "Main Menu";
+            text.text = "Main Menu. You Sacrificed " + GlobalVariables.numberOfSacrificed.ToString() + " Ducks.";
         }
     }
 }

@@ -29,6 +29,7 @@ public static class GlobalVariables
     public static float GodROC = 0.01f;
     public static float GodTime = 0.1f;
     public static bool MouseIsDown = false;
+    public static int numberOfSacrificed = 0;
     public static bool Timer(ref bool isChanging, ref float timer) {
       if (isChanging)
       {

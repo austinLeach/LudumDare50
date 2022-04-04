@@ -24,8 +24,11 @@ public class DragDrop : MonoBehaviour
         GlobalVariables.godHappiness = 250;
         GlobalVariables.foodPerSec = 0;
         GlobalVariables.waterPerSec = 0;
+        GlobalVariables.moneyPerSec = 0;
         GlobalVariables.population = 0;
         GlobalVariables.currentSpawnRate = 1f;
+        GlobalVariables.numberOfSacrificed = 0;
+        GlobalVariables.upgrades.Clear();
     }
 
     // Update is called once per frame

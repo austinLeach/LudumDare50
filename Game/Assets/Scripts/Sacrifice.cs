@@ -14,8 +14,10 @@ public class Sacrifice : MonoBehaviour
         {
             while(duckList.Count != 0)
             {
-                Destroy(duckList[0].gameObject);
-                GlobalVariables.population--;
+                duckList[0].DestroyDuck();
+                GlobalVariables.numberOfSacrificed++;
+                // Destroy(duckList[0].gameObject);
+                // GlobalVariables.population--;
                 if (GlobalVariables.population > 700)
                 {
                     GlobalVariables.godHappiness += 2;
@@ -97,7 +99,14 @@ public class Sacrifice : MonoBehaviour
             GlobalVariables.godHappiness = 1000;
         else if (GlobalVariables.godHappiness > 1 && GlobalVariables.godHappiness <= 1000)
         {
-            GlobalVariables.godHappiness -= GlobalVariables.GodROC + (GlobalVariables.population * 0.004f);
+            if (GlobalVariables.population < 150) {
+                GlobalVariables.godHappiness -= GlobalVariables.GodROC + (GlobalVariables.population * 0.012f);
+            }
+            else if (GlobalVariables.population < 250) {
+                GlobalVariables.godHappiness -= GlobalVariables.GodROC + (GlobalVariables.population * 0.008f);
+            } else {
+                GlobalVariables.godHappiness -= GlobalVariables.GodROC + (GlobalVariables.population * 0.005f);
+            }
             //decreaseRate -= 0.1f;
         }
 

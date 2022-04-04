@@ -22,22 +22,22 @@ public class Water : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (GlobalVariables.population > 700)
-        {
-            GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.14f);
-        }
-        else if (GlobalVariables.population > 500)
-        {
-            GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.11f);
-        }
-        else if (GlobalVariables.population > 250)
-        {
-            GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.09f);
-        }
-        else
-        {
-            GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.06f);
-        }
+        // if (GlobalVariables.population > 500)
+        // {
+        //     GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.15f);
+        // }
+        // else if (GlobalVariables.population > 250)
+        // {
+        //     GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.17f);
+        // }
+        // else if (GlobalVariables.population > 100)
+        // {
+        //     GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.18f);
+        // }
+        // else
+        // {
+            GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.20f);
+        // }
     }
 
     private void GenerateWater()
