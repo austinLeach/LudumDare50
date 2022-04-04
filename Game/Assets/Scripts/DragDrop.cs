@@ -12,6 +12,8 @@ public class DragDrop : MonoBehaviour
     public AudioSource audio;
     public int numberCanPickUp = 1;
     List<Duck> duckList = new List<Duck>();
+    public Texture2D openHand;
+    public Texture2D closeHand;
 
     // Start is called before the first frame update
     void Start()
@@ -25,9 +27,11 @@ public class DragDrop : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) {
             MouseIsDown = true;
             MouseDrag = true;
+            Cursor.SetCursor(closeHand, new Vector2(16, 30), CursorMode.Auto);
         }
         if (Input.GetMouseButtonUp(0)) {
             MouseIsDown = false;
+            Cursor.SetCursor(openHand, new Vector2(16, 30), CursorMode.Auto);
             for (int i = 0; i < duckList.Count; i++) {
             duckList[i].movingDuck = false;
             }

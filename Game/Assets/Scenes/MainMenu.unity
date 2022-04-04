@@ -2179,6 +2179,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 2109890272}
+  openHand: {fileID: 2800000, guid: ac6e740ca1e2f1b42a88c7a060a2d78e, type: 3}
+  closeHand: {fileID: 2800000, guid: 9562ee1d2c404b547b107bcabdd15876, type: 3}
 --- !u!1001 &2109890271
 PrefabInstance:
   m_ObjectHideFlags: 0
