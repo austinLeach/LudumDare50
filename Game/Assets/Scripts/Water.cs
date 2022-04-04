@@ -24,15 +24,15 @@ public class Water : MonoBehaviour
     {
         if (GlobalVariables.population > 700)
         {
-            GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.20f);
+            GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.21f);
         }
         else if (GlobalVariables.population > 500)
         {
-            GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.14f);
+            GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.18f);
         }
         else if (GlobalVariables.population > 250)
         {
-            GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.10f);
+            GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.15f);
         }
         else
         {
