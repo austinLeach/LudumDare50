@@ -30097,7 +30097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DuckDestroyer: {fileID: 1044130816}
-  FinalButton: {fileID: 0}
+  FinalButton: {fileID: 1284157445}
 --- !u!61 &1046683673
 BoxCollider2D:
   m_ObjectHideFlags: 0
