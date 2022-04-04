@@ -2,20 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 public class DragDrop : MonoBehaviour
 {
 
     public BoxCollider2D Hitbox;
     public bool MouseIsDown = false;
     public bool MouseDrag = false;
-
+    public AudioSource audio;
     public int numberCanPickUp = 1;
     List<Duck> duckList = new List<Duck>();
 
     // Start is called before the first frame update
     void Start()
     {
-
+        audio.time = GlobalVariables.timeInAudio1;
     }
 
     // Update is called once per frame
@@ -45,8 +46,16 @@ public class DragDrop : MonoBehaviour
             }
         }
 
-        if (GlobalVariables.population >= 1000 || GlobalVariables.food < 0 || GlobalVariables.water < 0) {
-            SceneManager.LoadScene("FinalBoss");
+        if (GlobalVariables.population >= 1000) {
+            SceneManager.LoadScene("inbetween2");
+        }
+        else if(GlobalVariables.food < 0) {
+            GlobalVariables.LostToFood = true;
+            SceneManager.LoadScene("inbetween2");
+        }
+        else if(GlobalVariables.water < 0) {
+            GlobalVariables.LostToWater = true;
+            SceneManager.LoadScene("inbetween2");
         }
     }
 

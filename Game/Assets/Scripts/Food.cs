@@ -5,7 +5,7 @@ using UnityEngine;
 public class Food : MonoBehaviour
 {
     public DragDrop dragDrop;
-
+    public float baseDecrease = 0.05f;
     private void Update()
     {
         if (GlobalVariables.foodPerSec > 0 && !IsInvoking("GenerateFood"))
@@ -25,6 +25,8 @@ public class Food : MonoBehaviour
 
     private void FixedUpdate()
     {
+        /*
+        float diff = Time.deltaTime + baseDecrease;
         if(GlobalVariables.population > 700)
         {
             GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.15f);
@@ -39,8 +41,21 @@ public class Food : MonoBehaviour
         }
         else
         {
+            //GlobalVariables.food -= diff * (GlobalVariables.population * 0.04f);
             GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.04f);
-        }
+        }*/
+
+        DecreaseFood();
+    }
+
+    private void DecreaseFood()
+    {
+        /*
+         * dec 
+         * min = 0 max = 14
+         */
+        int dec = GlobalVariables.population / 70;
+        GlobalVariables.food = dec + 6f;
     }
 
     private void GenerateFood()

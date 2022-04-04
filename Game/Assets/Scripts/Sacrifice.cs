@@ -6,7 +6,8 @@ public class Sacrifice : MonoBehaviour
 {
     public DragDrop dragDrop;
     private List<Duck> duckList = new List<Duck>();
-
+    public float decreaseRate = GlobalVariables.GodTime;
+    public bool decreaseHappiness = false;
     private void Update()
     {
         if(duckList.Count != 0 && !dragDrop.MouseIsDown)
@@ -46,6 +47,7 @@ public class Sacrifice : MonoBehaviour
 
     private void FixedUpdate()
     {
+        /*
         if(GlobalVariables.population > 700)
         {
             GlobalVariables.godHappiness -= Time.deltaTime * (Time.time / 10);
@@ -62,6 +64,9 @@ public class Sacrifice : MonoBehaviour
         {
             GlobalVariables.godHappiness -= Time.deltaTime * (Time.time / 30);
         }
+        */
+        DecreaseGod();
+        GlobalVariables.Timer(ref decreaseHappiness, ref decreaseRate);
         //Debug.Log("GH: " + GlobalVariables.godHappiness);
     }
 
@@ -81,5 +86,26 @@ public class Sacrifice : MonoBehaviour
         {
             duckList.Remove(duck);
         }
+    }
+
+    private void DecreaseGod()
+    {
+        if (decreaseHappiness)
+            return;
+
+        if (GlobalVariables.godHappiness > 1000)
+            GlobalVariables.godHappiness = 1000;
+        else if (GlobalVariables.godHappiness > 1 && GlobalVariables.godHappiness <= 1000)
+        {
+            GlobalVariables.godHappiness -= GlobalVariables.GodROC + (GlobalVariables.population * 0.25f);
+            //decreaseRate -= 0.1f;
+        }
+
+        else
+            GlobalVariables.godHappiness = 1;
+        decreaseHappiness = true;
+        decreaseRate = GlobalVariables.GodTime;
+        Debug.Log(GlobalVariables.godHappiness);
+        //Debug.Log(godSlider.value);
     }
 }

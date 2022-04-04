@@ -5,17 +5,20 @@ using UnityEngine.UI;
 
 public class FinalBoss : MonoBehaviour
 {
+    public AudioSource audio;
     public GameObject BossText;
     public Slider slider;
     float startTimer = 20f;
     bool start = true;
     bool firing = true;
     float firingTimer = 3f;
+    public GameObject FinalButton;
     // Start is called before the first frame update
     void Start()
     {
         GlobalVariables.finalTime = true;
         slider.maxValue = GlobalVariables.BossHealth;
+        audio.time = GlobalVariables.timeInAudio2;
         // GlobalVariables.upgrades.Add("1");
         // GlobalVariables.upgrades.Add("2");
         // GlobalVariables.upgrades.Add("3");
@@ -64,11 +67,13 @@ public class FinalBoss : MonoBehaviour
         } 
         else {
             Debug.Log("Game Over");
+            FinalButton.SetActive(true);
         }
 
         if (GlobalVariables.BossHealth < 0) {
             Debug.Log("WIN");
             GlobalVariables.wonGame = true;
+            FinalButton.SetActive(true);
         }
     }
 
