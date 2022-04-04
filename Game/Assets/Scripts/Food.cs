@@ -55,7 +55,7 @@ public class Food : MonoBehaviour
          * min = 0 max = 14
          */
         int dec = GlobalVariables.population / 70;
-        GlobalVariables.food = dec + 6f;
+        GlobalVariables.food -= dec + .05f;
     }
 
     private void GenerateFood()
