@@ -22,7 +22,7 @@ public class Water : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (GlobalVariables.population > 700)
+        /*if (GlobalVariables.population > 700)
         {
             GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.18f);
         }
@@ -37,7 +37,8 @@ public class Water : MonoBehaviour
         else
         {
             GlobalVariables.water -= Time.deltaTime * (GlobalVariables.population * 0.06f);
-        }
+        }*/
+        GlobalVariables.water -= GlobalVariables.population * 0.004f;
     }
 
     private void GenerateWater()
