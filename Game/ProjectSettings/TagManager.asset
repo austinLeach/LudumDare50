@@ -8,6 +8,7 @@ TagManager:
   - finalboss
   - artilery
   - nuke
+  - holyeggcollider
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Water
   - UI
   - hitbox
-  - 
+  - holyegg
   - 
   - 
   - 
