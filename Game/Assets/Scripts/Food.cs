@@ -34,11 +34,11 @@ public class Food : MonoBehaviour
         }
         else if(GlobalVariables.population > 500)
         {
-            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.19f);
+            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.13f);
         }
         else if(GlobalVariables.population > 250)
         {
-            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.14f);
+            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.10f);
         }
         else
         {
