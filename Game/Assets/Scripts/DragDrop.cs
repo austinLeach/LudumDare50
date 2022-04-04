@@ -17,6 +17,13 @@ public class DragDrop : MonoBehaviour
     void Start()
     {
         audio.time = GlobalVariables.timeInAudio1;
+        GlobalVariables.food = 100;
+        GlobalVariables.water = 100;
+        GlobalVariables.godHappiness = 250;
+        GlobalVariables.foodPerSec = 0;
+        GlobalVariables.waterPerSec = 0;
+        GlobalVariables.population = 0;
+        GlobalVariables.currentSpawnRate = 1f;
     }
 
     // Update is called once per frame
