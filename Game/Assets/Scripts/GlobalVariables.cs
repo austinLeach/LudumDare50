@@ -25,6 +25,8 @@ public static class GlobalVariables
     public static float timeInAudio1 = 0f;
     public static float timeInAudio2 = 0f;
     public static List<string> upgrades = new List<string>();
+    public static float GodROC = 1f;
+    public static float GodTime = 3f;
     public static bool Timer(ref bool isChanging, ref float timer) {
       if (isChanging)
       {
