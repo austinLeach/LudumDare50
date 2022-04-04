@@ -75,7 +75,7 @@ public class Food : MonoBehaviour
         Duck duck = collision.GetComponent<Duck>();
         if (duck)
         {
-            GlobalVariables.foodPerSec += 0.2f;
+            GlobalVariables.foodPerSec += 0.1f;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -83,7 +83,7 @@ public class Food : MonoBehaviour
         Duck duck = collision.GetComponent<Duck>();
         if (duck)
         {
-            GlobalVariables.foodPerSec -= 0.2f;
+            GlobalVariables.foodPerSec -= 0.1f;
         }
     }
 }

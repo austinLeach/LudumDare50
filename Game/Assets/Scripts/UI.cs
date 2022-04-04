@@ -8,6 +8,8 @@ public class UI : MonoBehaviour
     public Slider waterSlider;
     public Slider godSlider;
     public Image godSliderFill;
+    public Image foodSliderFill;
+    public Image waterSliderFill;
     public Text duckLimitLabel;
     public Text moneyLabel;
     public GameObject Panel;
@@ -31,6 +33,8 @@ public class UI : MonoBehaviour
     void Update()
     {
         ChangeGodColor();
+        ChangeFoodColor();
+        ChangeWaterColor();
         UpdateDuckText();
         UpdateMoneyText();
         UpdateSliders();
@@ -46,6 +50,20 @@ public class UI : MonoBehaviour
             godSliderFill.color = new Color(1f, 0.6f, 0f);
         else if (godSlider.value >= godSlider.maxValue * 0.75)
             godSliderFill.color = Color.green;
+    }
+    private void ChangeWaterColor()
+    {
+        if (waterSlider.value < waterSlider.maxValue * 0.25)
+            waterSliderFill.color = Color.red;
+        else if (waterSlider.value >= waterSlider.maxValue * 0.75)
+            waterSliderFill.color = new Color(0f, 0.490963f, 1f);
+    }
+    private void ChangeFoodColor()
+    {
+        if (foodSlider.value < foodSlider.maxValue * 0.25)
+            foodSliderFill.color = Color.red;
+        else
+            foodSliderFill.color = new Color(0.7735849f, 0.5212242f, 0.09122462f);
     }
 
     private void UpdateSliders()
