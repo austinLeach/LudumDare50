@@ -97,7 +97,7 @@ public class Sacrifice : MonoBehaviour
             GlobalVariables.godHappiness = 1000;
         else if (GlobalVariables.godHappiness > 1 && GlobalVariables.godHappiness <= 1000)
         {
-            GlobalVariables.godHappiness -= GlobalVariables.GodROC + (GlobalVariables.population * 0.25f);
+            GlobalVariables.godHappiness -= GlobalVariables.GodROC + (GlobalVariables.population * 0.15f);
             //decreaseRate -= 0.1f;
         }
 

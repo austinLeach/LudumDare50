@@ -25,19 +25,20 @@ public class Food : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+        float decrease;
         
-        float diff = Time.deltaTime + baseDecrease;
         if(GlobalVariables.population > 700)
-        {
-            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.23f);
-        }
-        else if(GlobalVariables.population > 500)
         {
             GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.19f);
         }
-        else if(GlobalVariables.population > 250)
+        else if(GlobalVariables.population > 500)
         {
             GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.16f);
+        }
+        else if(GlobalVariables.population > 250)
+        {
+            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.13f);
         }
         else
         {
