@@ -105,7 +105,7 @@ public class Sacrifice : MonoBehaviour
             GlobalVariables.godHappiness = 1;
         decreaseHappiness = true;
         decreaseRate = GlobalVariables.GodTime;
-        Debug.Log(GlobalVariables.godHappiness);
+        //Debug.Log(GlobalVariables.godHappiness);
         //Debug.Log(godSlider.value);
     }
 }
