@@ -14,7 +14,9 @@ public class Sacrifice : MonoBehaviour
         {
             while(duckList.Count != 0)
             {
-                duckList[0].DestroyDuck();
+                //duckList[0].DestroyDuck();
+                Destroy(duckList[0].gameObject);
+                GlobalVariables.population--;
                 GlobalVariables.numberOfSacrificed++;
                 // Destroy(duckList[0].gameObject);
                 // GlobalVariables.population--;

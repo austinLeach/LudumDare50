@@ -24,6 +24,10 @@ public class Duck : MonoBehaviour
     float quackDialogueTimer;
     bool initializedQuack = false;
     public GameObject quack;
+    bool hasFallen = false;
+    bool isDead = false;
+    float shrinkSpeed = 0.7f;
+    float scale = 0.7f;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,8 +77,15 @@ public class Duck : MonoBehaviour
         if (insideSac && !movingDuck) {
             // DestroyDuck();
         }
-        if (insideBoundary && !movingDuck) {
+        if (insideBoundary && !movingDuck && !hasFallen) {
+            hasFallen = true;
             DestroyDuck();
+        }
+        if(hasFallen)
+        {
+            transform.Rotate(0f, 0f, 4f, Space.Self);
+            scale -= Time.deltaTime * shrinkSpeed;
+            transform.localScale = new Vector3(scale, scale, scale);
         }
     }
 
@@ -115,8 +126,20 @@ public class Duck : MonoBehaviour
     }
 
     public void DestroyDuck() {
+        hasFallen = true;
+        StartCoroutine(WaitTimer(1));
+        //Destroy(this.gameObject);
+        //GlobalVariables.population--;
+    }
+
+    private IEnumerator WaitTimer(int deathTimer)
+    {
+        if (!isDead)
+            GlobalVariables.population--;
+        isDead = true;
+        yield return new WaitForSeconds(deathTimer);
+        //GlobalVariables.population--;
         Destroy(this.gameObject);
-        GlobalVariables.population--;
     }
 
     void Quack() {
