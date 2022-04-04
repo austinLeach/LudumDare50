@@ -27,6 +27,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 55c465990aa40fb4ca6160feace7dae3, type: 3}
+    - target: {fileID: 2331148883506481285, guid: 8ee6ee1e75e63834bb3ffaf995753417, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 2809691799977967310, guid: 8ee6ee1e75e63834bb3ffaf995753417, type: 3}
       propertyPath: m_Name
       value: bulletProjectile Variant
