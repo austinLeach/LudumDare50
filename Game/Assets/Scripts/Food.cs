@@ -30,11 +30,11 @@ public class Food : MonoBehaviour
         
         if(GlobalVariables.population > 700)
         {
-            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.19f);
+            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.14f);
         }
         else if(GlobalVariables.population > 500)
         {
-            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.13f);
+            GlobalVariables.food -= Time.deltaTime * (GlobalVariables.population * 0.12f);
         }
         else if(GlobalVariables.population > 250)
         {
@@ -67,7 +67,7 @@ public class Food : MonoBehaviour
         {
             GlobalVariables.food = GlobalVariables.sliderMax;
         }
-        Debug.Log("fps: " + GlobalVariables.foodPerSec);
+        //Debug.Log("fps: " + GlobalVariables.foodPerSec);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
