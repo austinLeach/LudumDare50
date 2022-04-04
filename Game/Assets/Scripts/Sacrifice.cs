@@ -15,7 +15,8 @@ public class Sacrifice : MonoBehaviour
             while(duckList.Count != 0)
             {
                 if (duckList[0]) {
-                    duckList[0].DestroyDuck();
+                    duckList[0].DestroyDuck(true);
+                    duckList.RemoveAt(0);
                 } else {
                     duckList.RemoveAt(0);
                 }

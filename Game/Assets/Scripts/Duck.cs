@@ -28,6 +28,7 @@ public class Duck : MonoBehaviour
     bool isDead = false;
     float shrinkSpeed = 0.7f;
     float scale = 0.7f;
+    public ParticleSystem sacrificeAnimation;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +40,8 @@ public class Duck : MonoBehaviour
             quackTimer = Random.Range(0f, 3f);
         } else {
             quackTimer = Random.Range(10f, 60f);
-        }  
+        }
+        sacrificeAnimation.enableEmission = false;
     }
 
     // Update is called once per frame
@@ -125,18 +127,22 @@ public class Duck : MonoBehaviour
         firstSpawn = false;
     }
 
-    public void DestroyDuck() {
-        if (this.gameObject) {
-            Destroy(this.gameObject);
-            GlobalVariables.population--;
+    public void DestroyDuck(bool sacrificed = false) {
+        if (this.gameObject && sacrificed && !isDead) {
+            StartCoroutine(WaitTimer(0.5f));
+            sacrificeAnimation.enableEmission = true;
+            this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            // Destroy(this.gameObject);
+            // GlobalVariables.population--;
+        } else if (this.gameObject && !isDead) {
+            hasFallen = true;
+            StartCoroutine(WaitTimer(1));
         }
-        hasFallen = true;
-        StartCoroutine(WaitTimer(1));
         //Destroy(this.gameObject);
         //GlobalVariables.population--;
     }
 
-    private IEnumerator WaitTimer(int deathTimer)
+    private IEnumerator WaitTimer(float deathTimer)
     {
         if (!isDead)
             GlobalVariables.population--;
