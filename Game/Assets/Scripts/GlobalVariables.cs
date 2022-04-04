@@ -18,6 +18,7 @@ public static class GlobalVariables
     public static int BossHealth = 100000;
     public static bool finalTime = false;
     public static bool nukeCollided = false;
+    public static bool HolyHit = false;
     public static bool wonGame = false;
     public static bool LostToFood = false;
     public static bool LostToWater = false;

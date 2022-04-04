@@ -37,7 +37,7 @@ public class Money : MonoBehaviour
             else if (GlobalVariables.population > 200) 
                 GlobalVariables.moneyPerSec += 5;
             else
-                GlobalVariables.moneyPerSec++;
+                GlobalVariables.moneyPerSec += 3;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -52,7 +52,7 @@ public class Money : MonoBehaviour
             else if (GlobalVariables.population > 200)
                 GlobalVariables.moneyPerSec -= 5;
             else 
-                GlobalVariables.moneyPerSec--;
+                GlobalVariables.moneyPerSec -= 3;
         }
     }
 }

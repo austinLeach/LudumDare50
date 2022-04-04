@@ -19,7 +19,13 @@ public class impendingDoom : MonoBehaviour
         if (Countdown < 15) {
             text.SetActive(true);
         }
-        Countdown -= Time.deltaTime;
+        if (GlobalVariables.HolyHit || GlobalVariables.nukeCollided) {
+            text.SetActive(true);
+            Countdown -= Time.deltaTime;
+        }
+        if (Countdown > 0) {
+            Countdown -= Time.deltaTime;
+        }
         Debug.Log(Countdown);
         SetText(Countdown);
     }
@@ -28,9 +34,11 @@ public class impendingDoom : MonoBehaviour
         Text timerText = text.GetComponent<Text>();
         if (Countdown > 0) {
             timerText.text = "Impending DOOM: " + Countdown.ToString();
-        } else {
+        } else if (GlobalVariables.HolyHit || GlobalVariables.nukeCollided) {
             timerText.text = "Time Since Quack-a-geddon: " + Countdown.ToString();
             timerText.fontSize = 80;
+        } else {
+            text.SetActive(false);
         }
         
     }
