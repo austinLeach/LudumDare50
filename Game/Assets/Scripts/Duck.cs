@@ -114,29 +114,7 @@ public class Duck : MonoBehaviour
         firstSpawn = false;
     }
 
-    private void OnTriggerStay2D(Collider2D other) {
-        Boundary boundary = other.GetComponent<Boundary>();
-        Sacrifice sacrifice = other.GetComponent<Sacrifice>();
-        if (sacrifice) {
-            insideSac = true;
-        }
-        if (boundary) {
-            insideBoundary = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other) {
-        Boundary boundary = other.GetComponent<Boundary>();
-        Sacrifice sacrifice = other.GetComponent<Sacrifice>();
-        if (sacrifice) {
-            insideSac = false;
-        }
-         if (boundary) {
-            insideBoundary = false;
-        }
-    }
-
-    void DestroyDuck() {
+    public void DestroyDuck() {
         Destroy(this.gameObject);
         GlobalVariables.population--;
     }

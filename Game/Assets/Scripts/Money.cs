@@ -31,13 +31,13 @@ public class Money : MonoBehaviour
         if (duck)
         {
             if (GlobalVariables.population > 800)
-                GlobalVariables.moneyPerSec += 20;
+                GlobalVariables.moneyPerSec += 40;
             else if (GlobalVariables.population > 500)
-                GlobalVariables.moneyPerSec += 10;
+                GlobalVariables.moneyPerSec += 20;
             else if (GlobalVariables.population > 200) 
-                GlobalVariables.moneyPerSec += 5;
+                GlobalVariables.moneyPerSec += 10;
             else
-                GlobalVariables.moneyPerSec += 3;
+                GlobalVariables.moneyPerSec += 5;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

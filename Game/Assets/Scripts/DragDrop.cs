@@ -32,11 +32,13 @@ public class DragDrop : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) {
+            GlobalVariables.MouseIsDown = true;
             MouseIsDown = true;
             MouseDrag = true;
             Cursor.SetCursor(closeHand, new Vector2(16, 30), CursorMode.Auto);
         }
         if (Input.GetMouseButtonUp(0)) {
+            GlobalVariables.MouseIsDown = false;
             MouseIsDown = false;
             Cursor.SetCursor(openHand, new Vector2(16, 30), CursorMode.Auto);
             for (int i = 0; i < duckList.Count; i++) {

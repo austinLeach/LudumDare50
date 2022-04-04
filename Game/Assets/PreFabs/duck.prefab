@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4716863741172711507}
   - component: {fileID: 9013222944326411282}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: quack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1690767229808291818}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 8277670690359473895}
   - component: {fileID: 8277670690359473888}
   - component: {fileID: 856874394311183532}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: duck
   m_TagString: asianDuck
   m_Icon: {fileID: 0}
